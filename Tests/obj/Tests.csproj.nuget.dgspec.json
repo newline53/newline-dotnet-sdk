@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/Tests/Tests.csproj": {
-      "version": "0.5.10.8",
+      "version": "0.5.10.9",
       "restore": {
         "projectUniqueName": "/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/Tests/Tests.csproj",
         "projectName": "Tests",

@@ -10,7 +10,7 @@
     <description>Developer-friendly and type-safe .NET SDK built to leverage the Newline Platform APIs.</description>
     <copyright>Copyright (c) Newline by Fifth Third 2026</copyright>
     <tags>newline, sdk, embedded-finance, fintech</tags>
-    <repository type="git" commit="e4d71829dbad1da17dde552a23a5b8d63bb4bc08" />
+    <repository type="git" commit="337855d0ee8be8d548c3a8aceb888a1afd84a842" />
     <dependencies>
       <group targetFramework="net10.0">
         <dependency id="newtonsoft.json" version="13.0.3" exclude="Build,Analyzers" />
