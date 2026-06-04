@@ -1,0 +1,10 @@
+# PostCombinedTransfersRequest
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 | Example                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ExternalUid`                                                               | *string*                                                                    | :heavy_minus_sign:                                                          | Optional client-supplied uid                                                | YrfDrfVRgpPgnhF5                                                            |
+| `SyntheticAccount`                                                          | [SyntheticAccountRequest](../../Models/Requests/SyntheticAccountRequest.md) | :heavy_check_mark:                                                          | N/A                                                                         |                                                                             |
+| `Transfer`                                                                  | [TransferRequest](../../Models/Requests/TransferRequest.md)                 | :heavy_check_mark:                                                          | N/A                                                                         |                                                                             |

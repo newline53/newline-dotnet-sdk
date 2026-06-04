@@ -1,0 +1,14 @@
+# CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse
+
+
+## Fields
+
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `StreetNumber`                                               | *string*                                                     | :heavy_check_mark:                                           | Building number for counterparty address. Alphanumeric only. | 123abc                                                       |
+| `Street1`                                                    | *string*                                                     | :heavy_check_mark:                                           | Street name for counterparty address                         | Abc St.                                                      |
+| `Street2`                                                    | *string*                                                     | :heavy_minus_sign:                                           | Optional second line of street                               | Suite 4A                                                     |
+| `City`                                                       | *string*                                                     | :heavy_check_mark:                                           | Maximum 35 characters                                        | Chicago                                                      |
+| `State`                                                      | *string*                                                     | :heavy_check_mark:                                           | 2 characters. Must be a valid US state abbreviation.         | IL                                                           |
+| `PostalCode`                                                 | *string*                                                     | :heavy_check_mark:                                           | 5-digit string. ZIP+4 is allowed.                            | 60301                                                        |
+| `Country`                                                    | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          | null                                                         |

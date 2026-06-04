@@ -1,0 +1,10 @@
+# UpdateSyntheticAccountResponse
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                        | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                           | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `Object`                                                                                          | [UpdateSyntheticAccountResponseBody](../../Models/Requests/UpdateSyntheticAccountResponseBody.md) | :heavy_minus_sign:                                                                                | The updated Synthetic Account resource is returned                                                |
+| `Headers`                                                                                         | Dictionary<String, List<*string*>>                                                                | :heavy_check_mark:                                                                                | N/A                                                                                               |

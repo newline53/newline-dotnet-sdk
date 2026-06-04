@@ -1,0 +1,10 @@
+# PostCombinedTransfersResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                      | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                         | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `Object`                                                                                        | [PostCombinedTransfersResponseBody](../../Models/Requests/PostCombinedTransfersResponseBody.md) | :heavy_minus_sign:                                                                              | A single Combined Transfer is returned                                                          |
+| `Headers`                                                                                       | Dictionary<String, List<*string*>>                                                              | :heavy_check_mark:                                                                              | N/A                                                                                             |

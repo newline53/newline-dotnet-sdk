@@ -1,0 +1,10 @@
+# GetCustodialLineItemsUidResponse
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                               | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `Object`                                                                                              | [GetCustodialLineItemsUidResponseBody](../../Models/Requests/GetCustodialLineItemsUidResponseBody.md) | :heavy_minus_sign:                                                                                    | A single Custodial Line Item is returned                                                              |
+| `Headers`                                                                                             | Dictionary<String, List<*string*>>                                                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |

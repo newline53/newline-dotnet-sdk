@@ -1,0 +1,12 @@
+# PutTransactionsUidAuthorizeForbiddenException
+
+Client authorization disabled. (The Program is not configured for Client Authorization)
+
+
+## Fields
+
+| Field                                                                                                                 | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `Errors`                                                                                                              | List<[PutTransactionsUidAuthorizeForbiddenError](../../Models/Requests/PutTransactionsUidAuthorizeForbiddenError.md)> | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| `Status`                                                                                                              | *long*                                                                                                                | :heavy_minus_sign:                                                                                                    | HTTP Status Code                                                                                                      |
+| `HttpMeta`                                                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                                               | :heavy_check_mark:                                                                                                    | N/A                                                                                                                   |

@@ -1,0 +1,18 @@
+# CreateTransferInstantPaymentTransmitter
+
+Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `Name`                                                               | *string*                                                             | :heavy_check_mark:                                                   | Name of the Transmitter.<br/>                                        | Marge's Roofing Inc                                                  |
+| `TransmitterIdentifier`                                              | *string*                                                             | :heavy_check_mark:                                                   | Up to 24 characters, and supplied by Transmitter. Alphanumeric only. | 123456789012ABC                                                      |
+| `StreetNumber`                                                       | *string*                                                             | :heavy_check_mark:                                                   | Building number for Transmitter address. Alphanumeric only.          | 123abc                                                               |
+| `Street1`                                                            | *string*                                                             | :heavy_check_mark:                                                   | Street name for Transmitter address                                  | Abc St.                                                              |
+| `City`                                                               | *string*                                                             | :heavy_check_mark:                                                   | Maximum 35 characters                                                | Chicago                                                              |
+| `State`                                                              | *string*                                                             | :heavy_check_mark:                                                   | 2 characters. Must be a valid US state abbreviation.                 | IL                                                                   |
+| `PostalCode`                                                         | *string*                                                             | :heavy_check_mark:                                                   | 5-digit string. ZIP+4 is allowed.                                    | 60301                                                                |
+| `Country`                                                            | *string*                                                             | :heavy_check_mark:                                                   | N/A                                                                  | null                                                                 |

@@ -1,0 +1,10 @@
+# ListCustomersProfileResponse
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `ProfileRequirement`                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | A statement that requires a response in order to onboard a Customer for a Product | Please provide your approximate annual income in USD.                             |
+| `ProfileResponse`                                                                 | *string*                                                                          | :heavy_minus_sign:                                                                | The Customer's response to the Profile Requirement as a single string value.      | Profile response                                                                  |
+| `ProfileRequirementUid`                                                           | *string*                                                                          | :heavy_minus_sign:                                                                | A UID referring to the Profile Requirement                                        | ptRLF7nQvy8VoqM1                                                                  |

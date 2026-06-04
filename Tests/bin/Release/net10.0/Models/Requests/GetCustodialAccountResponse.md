@@ -1,0 +1,10 @@
+# GetCustodialAccountResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                  | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                     | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `Object`                                                                                    | [GetCustodialAccountResponseBody](../../Models/Requests/GetCustodialAccountResponseBody.md) | :heavy_minus_sign:                                                                          | A single Custodial Account is returned                                                      |
+| `Headers`                                                                                   | Dictionary<String, List<*string*>>                                                          | :heavy_check_mark:                                                                          | N/A                                                                                         |

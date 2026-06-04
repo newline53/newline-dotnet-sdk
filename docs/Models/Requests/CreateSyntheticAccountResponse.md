@@ -1,0 +1,10 @@
+# CreateSyntheticAccountResponse
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                        | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                           | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `Object`                                                                                          | [CreateSyntheticAccountResponseBody](../../Models/Requests/CreateSyntheticAccountResponseBody.md) | :heavy_minus_sign:                                                                                | A new Synthetic Account is created                                                                |
+| `Headers`                                                                                         | Dictionary<String, List<*string*>>                                                                | :heavy_check_mark:                                                                                | N/A                                                                                               |

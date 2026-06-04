@@ -1,0 +1,10 @@
+# GenerateAuthTokenResponse
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                              | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                 | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `Object`                                                                                | [GenerateAuthTokenResponseBody](../../Models/Requests/GenerateAuthTokenResponseBody.md) | :heavy_minus_sign:                                                                      | A new authentication token is generated                                                 |
+| `Headers`                                                                               | Dictionary<String, List<*string*>>                                                      | :heavy_check_mark:                                                                      | N/A                                                                                     |

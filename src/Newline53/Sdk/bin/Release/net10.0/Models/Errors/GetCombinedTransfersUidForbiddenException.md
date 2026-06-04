@@ -1,0 +1,12 @@
+# GetCombinedTransfersUidForbiddenException
+
+Denied access to Combined Transfers
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Errors`                                                                                                      | List<[GetCombinedTransfersUidForbiddenError](../../Models/Requests/GetCombinedTransfersUidForbiddenError.md)> | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
+| `Status`                                                                                                      | *long*                                                                                                        | :heavy_minus_sign:                                                                                            | HTTP Status Code                                                                                              |
+| `HttpMeta`                                                                                                    | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                                       | :heavy_check_mark:                                                                                            | N/A                                                                                                           |
