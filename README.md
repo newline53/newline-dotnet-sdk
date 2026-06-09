@@ -31,7 +31,7 @@ Developer-friendly and type-safe .NET SDK built to leverage the Newline Platform
 Install the Newline SDK as a package in your .NET project:
 
 ```bash
-dotnet add package newline-dotnet-sdk --source https://nuget.pkg.github.com/newline53/index.json
+dotnet add package Newline53.sdk
 ```
 
 <!-- No SDK Installation [installation] -->
