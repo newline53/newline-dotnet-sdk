@@ -13,9 +13,9 @@ var value = ListSyntheticAccountsDataSyntheticAccountCategory.General;
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `General`                 | general                   |
-| `AchExternal`             | ach_external              |
-| `InstantPaymentsExternal` | instant_payments_external |
-| `WireExternal`            | wire_external             |
+| Name                     | Value                    |
+| ------------------------ | ------------------------ |
+| `General`                | general                  |
+| `AchExternal`            | ach_external             |
+| `InstantPaymentExternal` | instant_payment_external |
+| `WireExternal`           | wire_external            |

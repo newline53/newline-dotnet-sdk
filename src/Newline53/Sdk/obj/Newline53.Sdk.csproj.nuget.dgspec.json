@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/Newline53.Sdk.csproj": {
-      "version": "0.5.10",
+      "version": "0.5.12",
       "restore": {
         "projectUniqueName": "/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/Newline53.Sdk.csproj",
         "projectName": "Newline53.Sdk",
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -21,7 +21,7 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("general")] General,
         [JsonProperty("ach_external")] AchExternal,
         [JsonProperty("wire_external")] WireExternal,
-        [JsonProperty("instant_payments_external")] InstantPaymentsExternal,
+        [JsonProperty("instant_payment_external")] InstantPaymentExternal,
     }
 
     public static class QueryParamSyntheticAccountCategoryExtension

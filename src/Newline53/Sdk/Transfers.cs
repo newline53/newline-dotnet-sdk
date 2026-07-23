@@ -78,7 +78,7 @@ namespace Newline53.Sdk
         /// <br/>
         /// The Synthetic Accounts allowed in a Transfer request are listed below<br/>
         /// <br/>
-        /// - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payments_external` category<br/>
+        /// - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payment_external` category<br/>
         /// - between two liability Synthetic Accounts in the `general` category that are also owned by the same Customer.<br/>
         /// <br/>
         /// &gt; **Note**<br/>
@@ -301,7 +301,7 @@ namespace Newline53.Sdk
         /// <br/>
         /// The Synthetic Accounts allowed in a Transfer request are listed below<br/>
         /// <br/>
-        /// - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payments_external` category<br/>
+        /// - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payment_external` category<br/>
         /// - between two liability Synthetic Accounts in the `general` category that are also owned by the same Customer.<br/>
         /// <br/>
         /// &gt; **Note**<br/>

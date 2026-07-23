@@ -200,11 +200,17 @@ public class CommonHelpers
                              RegexOptions.IgnoreCase);
     }
 
-    private static readonly JsonSerializerSettings NormalizedJsonSettings = new JsonSerializerSettings {
-        DateFormatHandling = DateFormatHandling.IsoDateFormat,
-        DateTimeZoneHandling = DateTimeZoneHandling.Utc,
-        FloatFormatHandling = FloatFormatHandling.DefaultValue,
-    };
+    // Derive test canonicalization settings from the SDK's serializer settings to prevent drift.
+    private static readonly JsonSerializerSettings NormalizedJsonSettings = BuildNormalizedJsonSettings();
+
+    private static JsonSerializerSettings BuildNormalizedJsonSettings()
+    {
+        var settings = Utilities.GetDefaultJsonSerializerSettings();
+        settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+        settings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+        settings.FloatFormatHandling = FloatFormatHandling.DefaultValue;
+        return settings;
+    }
 
     /// <summary>
     /// Truncates high-precision decimal numbers to 25 digits after the decimal point.

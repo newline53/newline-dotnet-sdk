@@ -2228,7 +2228,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentRequest">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentRequest.CounterpartyAddress">
@@ -2318,7 +2318,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountRequest.InstantPayment">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountRequest.Wire">
@@ -2383,27 +2383,27 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountResponseBody.NetUsdBalance">
             <summary>
-            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountResponseBody.NetUsdPendingBalance">
             <summary>
-            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountResponseBody.NetUsdAvailableBalance">
             <summary>
-            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountResponseBody.NetUsdClosingBalance">
             <summary>
-            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountResponseBody.NetUsdClosingBalanceAsOf">
             <summary>
-            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountResponseBody.AssetBalances">
@@ -2723,7 +2723,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentRequest.Memo">
             <summary>
-            A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+            A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentResponse">
@@ -2733,7 +2733,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentResponse.Memo">
             <summary>
-            A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+            A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentTransmitter">
@@ -5121,27 +5121,27 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountResponseBody.NetUsdBalance">
             <summary>
-            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountResponseBody.NetUsdPendingBalance">
             <summary>
-            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountResponseBody.NetUsdAvailableBalance">
             <summary>
-            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountResponseBody.NetUsdClosingBalance">
             <summary>
-            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountResponseBody.NetUsdClosingBalanceAsOf">
             <summary>
-            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountResponseBody.AssetBalances">
@@ -7034,7 +7034,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPayment.Memo">
             <summary>
-            A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+            A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPayment.CounterpartyAddress">
@@ -7653,7 +7653,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferInstantPayment.Memo">
             <summary>
-            A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+            A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransferIntermediaryBankAddress">
@@ -9036,27 +9036,27 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.NetUsdBalance">
             <summary>
-            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.NetUsdPendingBalance">
             <summary>
-            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.NetUsdAvailableBalance">
             <summary>
-            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.NetUsdClosingBalance">
             <summary>
-            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.NetUsdClosingBalanceAsOf">
             <summary>
-            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.AssetBalances">
@@ -9096,7 +9096,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.InstantPayment">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.Wire">
@@ -9116,7 +9116,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.ListSyntheticAccountsInstantPayment">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsInstantPayment.CounterpartyName">
@@ -10701,7 +10701,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelInstantPayment.Memo">
             <summary>
-            A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+            A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelIntermediaryBankAddress">
@@ -11441,7 +11441,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.SyntheticAccountInstantPayment">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountInstantPayment.CounterpartyAddress">
@@ -11511,7 +11511,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountRequest.InstantPayment">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountRequest.Wire">
@@ -11611,7 +11611,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.TransferInstantPayment.Memo">
             <summary>
-            A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+            A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.TransferRequest">
@@ -12141,7 +12141,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentRequest">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentRequest.CounterpartyAddress">
@@ -12231,7 +12231,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountRequestBody.InstantPayment">
             <summary>
-            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+            Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountRequestBody.Wire">
@@ -12296,27 +12296,27 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountResponseBody.NetUsdBalance">
             <summary>
-            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountResponseBody.NetUsdPendingBalance">
             <summary>
-            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountResponseBody.NetUsdAvailableBalance">
             <summary>
-            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountResponseBody.NetUsdClosingBalance">
             <summary>
-            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountResponseBody.NetUsdClosingBalanceAsOf">
             <summary>
-            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+            The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountResponseBody.AssetBalances">
@@ -12512,7 +12512,7 @@
             <br/>
             - **Custodial Account** - This is the Account that exists in our Synthetic Core and represents the reciprocal Account on Fifth Third's ledger. These are the accounts you can access via Fifth Third Direct. Custodial Accounts will be created by Newline.<br/>
             <br/>
-            - **Synthetic Account** - How Newline represents the assets held by your Customers. These are the accounts that Customers view and interact with on your application. Synthetic Accounts are also used to manage external accounts that your Customers will likely use within your application. Synthetic Accounts of the general category will be created by Newline or by the Client depending on your use case. Clients will create external Synthetic Accounts like wire_external, ach_external, and instant_payments_external.<br/>
+            - **Synthetic Account** - How Newline represents the assets held by your Customers. These are the accounts that Customers view and interact with on your application. Synthetic Accounts are also used to manage external accounts that your Customers will likely use within your application. Synthetic Accounts of the general category will be created by Newline or by the Client depending on your use case. Clients will create external Synthetic Accounts like wire_external, ach_external, and instant_payment_external.<br/>
             <br/>
             - **Virtual Reference Number** - Virtual Reference Numbers (or VRNs) are virtualized account numbers. They are aliases to a synthetic account and can form a many-to-one relationship with their parent synthetic account.<br/>
             <br/>
@@ -12880,7 +12880,7 @@
             <br/>
             - **Custodial Account** - This is the Account that exists in our Synthetic Core and represents the reciprocal Account on Fifth Third's ledger. These are the accounts you can access via Fifth Third Direct. Custodial Accounts will be created by Newline.<br/>
             <br/>
-            - **Synthetic Account** - How Newline represents the assets held by your Customers. These are the accounts that Customers view and interact with on your application. Synthetic Accounts are also used to manage external accounts that your Customers will likely use within your application. Synthetic Accounts of the general category will be created by Newline or by the Client depending on your use case. Clients will create external Synthetic Accounts like wire_external, ach_external, and instant_payments_external.<br/>
+            - **Synthetic Account** - How Newline represents the assets held by your Customers. These are the accounts that Customers view and interact with on your application. Synthetic Accounts are also used to manage external accounts that your Customers will likely use within your application. Synthetic Accounts of the general category will be created by Newline or by the Client depending on your use case. Clients will create external Synthetic Accounts like wire_external, ach_external, and instant_payment_external.<br/>
             <br/>
             - **Virtual Reference Number** - Virtual Reference Numbers (or VRNs) are virtualized account numbers. They are aliases to a synthetic account and can form a many-to-one relationship with their parent synthetic account.<br/>
             <br/>
@@ -13535,7 +13535,7 @@
             <remarks>
             Returns a single Synthetic Account resource along with supporting details and account balances.<br/>
             <br/>
-            Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payments_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
+            Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payment_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
             </remarks>
             <param name="uid">Newline-generated unique id resource specific to the current endpoint.</param>
             <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -13697,7 +13697,7 @@
             <remarks>
             Returns a single Synthetic Account resource along with supporting details and account balances.<br/>
             <br/>
-            Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payments_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
+            Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payment_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
             </remarks>
             <param name="uid">Newline-generated unique id resource specific to the current endpoint.</param>
             <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -14188,7 +14188,7 @@
             <br/>
             The Synthetic Accounts allowed in a Transfer request are listed below<br/>
             <br/>
-            - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payments_external` category<br/>
+            - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payment_external` category<br/>
             - between two liability Synthetic Accounts in the `general` category that are also owned by the same Customer.<br/>
             <br/>
             &gt; **Note**<br/>
@@ -14303,7 +14303,7 @@
             <br/>
             The Synthetic Accounts allowed in a Transfer request are listed below<br/>
             <br/>
-            - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payments_external` category<br/>
+            - between a liability Synthetic Account in the `general` category and a Synthetic Account in the `ach_external`, `wire_external`, or `instant_payment_external` category<br/>
             - between two liability Synthetic Accounts in the `general` category that are also owned by the same Customer.<br/>
             <br/>
             &gt; **Note**<br/>

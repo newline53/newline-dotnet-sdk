@@ -75,31 +75,31 @@ namespace Newline53.Sdk.Models.Requests
         public bool? Liability { get; set; }
 
         /// <summary>
-        /// The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+        /// The current settled balance of this account in US Dollars. This field will be null for synthetic_account_types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
         /// </summary>
         [JsonProperty("net_usd_balance")]
         public string? NetUsdBalance { get; set; } = null;
 
         /// <summary>
-        /// The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+        /// The sum of all pending transactions for this account in US Dollars. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
         /// </summary>
         [JsonProperty("net_usd_pending_balance")]
         public string? NetUsdPendingBalance { get; set; } = null;
 
         /// <summary>
-        /// The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+        /// The balance available to spend calculated as the settled balance less any pending withdrawals. Pending deposits are not included. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
         /// </summary>
         [JsonProperty("net_usd_available_balance")]
         public string? NetUsdAvailableBalance { get; set; } = null;
 
         /// <summary>
-        /// The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+        /// The settled balance for the account in US Dollars as of the date in net_usd_closing_balance_as_of. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
         /// </summary>
         [JsonProperty("net_usd_closing_balance")]
         public string? NetUsdClosingBalance { get; set; } = null;
 
         /// <summary>
-        /// The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payments_external`, `wire_external`).
+        /// The date that net_usd_closing_balance was last calculated. This field will be null for Synthetic Account Types in an external category (`ach_external`, `instant_payment_external`, `wire_external`).
         /// </summary>
         [JsonProperty("net_usd_closing_balance_as_of")]
         public string? NetUsdClosingBalanceAsOf { get; set; }

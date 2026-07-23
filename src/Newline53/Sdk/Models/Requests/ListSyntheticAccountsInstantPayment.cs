@@ -13,7 +13,7 @@ namespace Newline53.Sdk.Models.Requests
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payments_external` category.
+    /// Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
     /// </summary>
     public class ListSyntheticAccountsInstantPayment
     {

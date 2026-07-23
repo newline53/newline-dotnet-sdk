@@ -103,7 +103,7 @@ namespace Newline53.Sdk.Models.Requests
         public GetTransactionsUidInstantPaymentCounterpartyBankAddress? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
-        /// A message transmitted to the recipient bank. Can contain letters and numbers as well as '-', '_', and spaces.
+        /// A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
         /// </summary>
         [JsonProperty("memo")]
         public string? Memo { get; set; } = null;

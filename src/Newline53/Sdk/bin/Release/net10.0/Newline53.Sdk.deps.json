@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "Newline53.Sdk/0.5.10": {
+      "Newline53.Sdk/0.5.12": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "NodaTime": "3.1.9"
@@ -34,7 +34,7 @@
     }
   },
   "libraries": {
-    "Newline53.Sdk/0.5.10": {
+    "Newline53.Sdk/0.5.12": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

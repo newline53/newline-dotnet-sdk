@@ -13,9 +13,9 @@ var value = QueryParamSyntheticAccountCategory.General;
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `General`                 | general                   |
-| `AchExternal`             | ach_external              |
-| `WireExternal`            | wire_external             |
-| `InstantPaymentsExternal` | instant_payments_external |
+| Name                     | Value                    |
+| ------------------------ | ------------------------ |
+| `General`                | general                  |
+| `AchExternal`            | ach_external             |
+| `WireExternal`           | wire_external            |
+| `InstantPaymentExternal` | instant_payment_external |

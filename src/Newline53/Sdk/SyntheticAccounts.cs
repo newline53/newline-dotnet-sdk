@@ -114,7 +114,7 @@ namespace Newline53.Sdk
         /// <remarks>
         /// Returns a single Synthetic Account resource along with supporting details and account balances.<br/>
         /// <br/>
-        /// Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payments_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
+        /// Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payment_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
         /// </remarks>
         /// <param name="uid">Newline-generated unique id resource specific to the current endpoint.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -724,7 +724,7 @@ namespace Newline53.Sdk
         /// <remarks>
         /// Returns a single Synthetic Account resource along with supporting details and account balances.<br/>
         /// <br/>
-        /// Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payments_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
+        /// Note: Newline will suppress the `account_number` value for Synthetic Accounts in the `ach_external`, `wire_external`, and `instant_payment_external` categories. The `account_number_last_four` value will be returned in the response to help identify these Synthetic Accounts.
         /// </remarks>
         /// <param name="uid">Newline-generated unique id resource specific to the current endpoint.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>

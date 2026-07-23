@@ -6,11 +6,11 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "Tests/0.5.10.9": {
+      "Tests/0.5.12.14": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.11.1",
           "Microsoft.TestPlatform.TestHost": "17.11.1",
-          "Newline53.Sdk": "0.5.10",
+          "Newline53.Sdk": "0.5.12",
           "xunit": "2.4.2"
         },
         "runtime": {
@@ -340,22 +340,22 @@
           }
         }
       },
-      "Newline53.Sdk/0.5.10": {
+      "Newline53.Sdk/0.5.12": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "NodaTime": "3.1.9"
         },
         "runtime": {
           "Newline53.Sdk.dll": {
-            "assemblyVersion": "0.5.10.0",
-            "fileVersion": "0.5.10.0"
+            "assemblyVersion": "0.5.12.0",
+            "fileVersion": "0.5.12.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "Tests/0.5.10.9": {
+    "Tests/0.5.12.14": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -444,7 +444,7 @@
       "path": "xunit.extensibility.execution/2.4.2",
       "hashPath": "xunit.extensibility.execution.2.4.2.nupkg.sha512"
     },
-    "Newline53.Sdk/0.5.10": {
+    "Newline53.Sdk/0.5.12": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
