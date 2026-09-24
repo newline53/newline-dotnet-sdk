@@ -435,7 +435,7 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "Newline53.Sdk/0.5.12": {
+      "Newline53.Sdk/0.6.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -996,7 +996,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "Newline53.Sdk/0.5.12": {
+    "Newline53.Sdk/0.6.0": {
       "type": "project",
       "path": "../src/Newline53/Sdk/Newline53.Sdk.csproj",
       "msbuildProject": "../src/Newline53/Sdk/Newline53.Sdk.csproj"
@@ -1007,7 +1007,7 @@
       "JUnitXml.TestLogger >= 3.1.12",
       "Microsoft.NET.Test.Sdk >= 17.11.1",
       "Microsoft.TestPlatform.TestHost >= 17.11.1",
-      "Newline53.Sdk >= 0.5.12",
+      "Newline53.Sdk >= 0.6.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -1017,7 +1017,7 @@
     "/home/jenkins/.nuget/packages/": {}
   },
   "project": {
-    "version": "0.5.12.14",
+    "version": "0.6.0.16",
     "restore": {
       "projectUniqueName": "/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/Tests/Tests.csproj",
       "projectName": "Tests",

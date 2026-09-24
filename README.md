@@ -256,7 +256,7 @@ catch (System.Net.Http.HttpRequestException ex)
 **Primary exception:**
 * [`NewlineSDKException`](./src/Newline53/Sdk/Models/Errors/NewlineSDKException.cs): The base class for HTTP error responses.
 
-<details><summary>Less common exceptions (34)</summary>
+<details><summary>Less common exceptions (35)</summary>
 
 * [`System.Net.Http.HttpRequestException`](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httprequestexception): Network connectivity error. For more details about the underlying cause, inspect the `ex.InnerException`.
 
@@ -264,6 +264,7 @@ catch (System.Net.Http.HttpRequestException ex)
   * [`UpdateSyntheticAccountBadRequestException`](./src/Newline53/Sdk/Models/Errors/UpdateSyntheticAccountBadRequestException.cs): A Synthetic Account is not updated if a required parameter is missing. Status code `400`. Applicable to 1 of 52 methods.*
   * [`PutTransfersUidCancelBadRequestException`](./src/Newline53/Sdk/Models/Errors/PutTransfersUidCancelBadRequestException.cs): The transfer is not eligible for cancellation. Status code `400`. Applicable to 1 of 52 methods.*
   * [`PutTransactionsUidAuthorizeBadRequestException`](./src/Newline53/Sdk/Models/Errors/PutTransactionsUidAuthorizeBadRequestException.cs): Bad authorization request. Status code `400`. Applicable to 1 of 52 methods.*
+  * [`PostVirtualReferenceNumbersBadRequestException`](./src/Newline53/Sdk/Models/Errors/PostVirtualReferenceNumbersBadRequestException.cs): Bad request. Status code `400`. Applicable to 1 of 52 methods.*
   * [`PostReturnsBadRequestException`](./src/Newline53/Sdk/Models/Errors/PostReturnsBadRequestException.cs): Creation Error. Status code `400`. Applicable to 1 of 52 methods.*
   * [`PutTransactionsUidAuthorizeForbiddenException`](./src/Newline53/Sdk/Models/Errors/PutTransactionsUidAuthorizeForbiddenException.cs): Client authorization disabled. (The Program is not configured for Client Authorization). Status code `403`. Applicable to 1 of 52 methods.*
   * [`GetReturnsForbiddenException`](./src/Newline53/Sdk/Models/Errors/GetReturnsForbiddenException.cs): Denied access to Returns. Status code `403`. Applicable to 1 of 52 methods.*

@@ -89,7 +89,7 @@
     "/home/jenkins/.nuget/packages/": {}
   },
   "project": {
-    "version": "0.5.12",
+    "version": "0.6.0",
     "restore": {
       "projectUniqueName": "/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/Newline53.Sdk.csproj",
       "projectName": "Newline53.Sdk",

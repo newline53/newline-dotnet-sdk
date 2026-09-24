@@ -209,14 +209,14 @@ func testGetTransactionsGetTransactionsTransactions0(w http.ResponseWriter, req 
 				VirtualReferenceNumberUID:      types.String("<id>"),
 				Wire: &operations.GetTransactionsWire{
 					CounterpartyName: "Ultimate Window Installers,",
-					CounterpartyBankAddress: optionalnullable.From(&operations.GetTransactionsWireCounterpartyBankAddress{
+					CounterpartyBankAddress: optionalnullable.From(&operations.GetTransactionsCounterpartyBankAddressUnstructuredAddress{
 						Line1: types.String("101 Common St"),
 						Line2: types.String("Boring, Oregon 97009"),
 						Line3: types.String("Coxsackie NY 12051 US"),
 					}),
 					CounterpartyBankName:          optionalnullable.From(types.String("ACME Bank")),
 					CounterpartyBankRoutingNumber: types.String("123456789"),
-					IntermediaryBankAddress: &operations.GetTransactionsIntermediaryBankAddress{
+					IntermediaryBankAddress: &operations.GetTransactionsIntermediaryBankAddressUnstructuredAddress{
 						Line1: optionalnullable.From(types.String("202 Another St")),
 						Line2: optionalnullable.From(types.String("Calcium, NY 13616")),
 						Line3: nil,
@@ -266,10 +266,11 @@ func testGetTransactionsGetTransactionsTransactions0(w http.ResponseWriter, req 
 					CounterpartyBankRoutingNumber:     types.String("123456789"),
 					CounterpartyAccountNumberLastFour: types.String("3345"),
 					PaymentID:                         types.String("BayleeStacy"),
+					PurposeOfPayment:                  optionalnullable.From(operations.GetTransactionsPurposeOfPaymentGdds.ToPointer()),
 					OriginalEndToEndID:                optionalnullable.From(types.String("null,")),
 					TransmitterName:                   types.String("Rupert's Roofers of Raleigh"),
 					InitiatingPartyName:               types.String("Rupert's Roofers of Raleigh"),
-					CounterpartyBankAddress: optionalnullable.From(&operations.GetTransactionsInstantPaymentCounterpartyBankAddress{
+					CounterpartyBankAddress: optionalnullable.From(&operations.GetTransactionsCounterpartyBankAddress{
 						StreetNumber: "789",
 						Street1:      "Bank Blvd.",
 						Street2:      types.String("Suite 4A"),
@@ -317,14 +318,14 @@ func testGetTransactionsGetTransactionsTransactions0(w http.ResponseWriter, req 
 				},
 				Wire: &operations.GetTransactionsWire{
 					CounterpartyName: "Ultimate Window Installers",
-					CounterpartyBankAddress: optionalnullable.From(&operations.GetTransactionsWireCounterpartyBankAddress{
+					CounterpartyBankAddress: optionalnullable.From(&operations.GetTransactionsCounterpartyBankAddressUnstructuredAddress{
 						Line1: types.String("101 Common St"),
 						Line2: types.String("Boring, Oregon 97009"),
 						Line3: types.String("Coxsackie NY 12051 US"),
 					}),
 					CounterpartyBankName:          optionalnullable.From(types.String("ACME Bank")),
 					CounterpartyBankRoutingNumber: types.String("123456789"),
-					IntermediaryBankAddress: &operations.GetTransactionsIntermediaryBankAddress{
+					IntermediaryBankAddress: &operations.GetTransactionsIntermediaryBankAddressUnstructuredAddress{
 						Line1: optionalnullable.From(types.String("202 Another St")),
 						Line2: optionalnullable.From(types.String("Calcium, NY 13616")),
 						Line3: nil,

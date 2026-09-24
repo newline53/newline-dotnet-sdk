@@ -9,6 +9,7 @@
 #nullable enable
 namespace Newline53.Sdk.Models.Requests
 {
+    using Newline53.Sdk.Models.Requests;
     using Newline53.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -37,5 +38,11 @@ namespace Newline53.Sdk.Models.Requests
         /// </summary>
         [JsonProperty("routing_number")]
         public string RoutingNumber { get; set; } = default!;
+
+        /// <summary>
+        /// The type of VRN. Defaults to `business` if omitted. `consumer` is only available if enabled for your program.
+        /// </summary>
+        [JsonProperty("type")]
+        public TypeRequest? Type { get; set; } = Newline53.Sdk.Models.Requests.TypeRequest.Business;
     }
 }

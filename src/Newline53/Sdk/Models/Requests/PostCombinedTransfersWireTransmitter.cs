@@ -9,45 +9,211 @@
 #nullable enable
 namespace Newline53.Sdk.Models.Requests
 {
+    using Newline53.Sdk.Models.Requests;
     using Newline53.Sdk.Utils;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+
+    public class PostCombinedTransfersWireTransmitterType
+    {
+        private PostCombinedTransfersWireTransmitterType(string value)
+        {
+            Value = value;
+        }
+
+        public string Value { get; private set; }
+
+        public static PostCombinedTransfersWireTransmitterType WireTransmitterTransferUnstructuredAddress
+        {
+            get {
+                return new PostCombinedTransfersWireTransmitterType("wire_transmitter_transfer_Unstructured Address");
+            }
+        }
+
+        public static PostCombinedTransfersWireTransmitterType TransferStructuredAddress
+        {
+            get {
+                return new PostCombinedTransfersWireTransmitterType("transfer_Structured Address");
+            }
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
+        public static implicit operator String(PostCombinedTransfersWireTransmitterType v)
+        {
+            return v.Value;
+        }
+        public static PostCombinedTransfersWireTransmitterType FromString(string v)
+        {
+            switch (v)
+            {
+                case "wire_transmitter_transfer_Unstructured Address":
+                    return WireTransmitterTransferUnstructuredAddress;
+                case "transfer_Structured Address":
+                    return TransferStructuredAddress;
+                default:
+                    throw new ArgumentException("Invalid value for PostCombinedTransfersWireTransmitterType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((PostCombinedTransfersWireTransmitterType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
 
     /// <summary>
-    /// Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+    /// Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
     /// </summary>
+    [JsonConverter(typeof(PostCombinedTransfersWireTransmitter.PostCombinedTransfersWireTransmitterConverter))]
     public class PostCombinedTransfersWireTransmitter
     {
-        /// <summary>
-        /// Name of the Transmitter.
-        /// </summary>
-        [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public PostCombinedTransfersWireTransmitter(PostCombinedTransfersWireTransmitterType type)
+        {
+            Type = type;
+        }
 
-        /// <summary>
-        /// Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
-        /// </summary>
-        [JsonProperty("transmitter_identifier")]
-        public string TransmitterIdentifier { get; set; } = default!;
+        [SpeakeasyMetadata("form:explode=true")]
+        public WireTransmitterTransferUnstructuredAddress? WireTransmitterTransferUnstructuredAddress { get; set; }
 
-        /// <summary>
-        /// Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-        /// </summary>
-        [JsonProperty("line1", NullValueHandling = NullValueHandling.Include)]
-        public string? Line1 { get; set; }
+        [SpeakeasyMetadata("form:explode=true")]
+        public TransferStructuredAddress? TransferStructuredAddress { get; set; }
 
-        /// <summary>
-        /// Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-        /// </summary>
-        [JsonProperty("line2")]
-        public string? Line2 { get; set; } = null;
+        public PostCombinedTransfersWireTransmitterType Type { get; set; }
+        public static PostCombinedTransfersWireTransmitter CreateWireTransmitterTransferUnstructuredAddress(WireTransmitterTransferUnstructuredAddress wireTransmitterTransferUnstructuredAddress)
+        {
+            PostCombinedTransfersWireTransmitterType typ = PostCombinedTransfersWireTransmitterType.WireTransmitterTransferUnstructuredAddress;
 
-        /// <summary>
-        /// Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-        /// </summary>
-        [JsonProperty("line3")]
-        public string? Line3 { get; set; } = null;
+            PostCombinedTransfersWireTransmitter res = new PostCombinedTransfersWireTransmitter(typ);
+            res.WireTransmitterTransferUnstructuredAddress = wireTransmitterTransferUnstructuredAddress;
+            return res;
+        }
+        public static PostCombinedTransfersWireTransmitter CreateTransferStructuredAddress(TransferStructuredAddress transferStructuredAddress)
+        {
+            PostCombinedTransfersWireTransmitterType typ = PostCombinedTransfersWireTransmitterType.TransferStructuredAddress;
 
-        [JsonProperty("country")]
-        public string Country { get; set; } = default!;
+            PostCombinedTransfersWireTransmitter res = new PostCombinedTransfersWireTransmitter(typ);
+            res.TransferStructuredAddress = transferStructuredAddress;
+            return res;
+        }
+
+        public class PostCombinedTransfersWireTransmitterConverter : JsonConverter
+        {
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(PostCombinedTransfersWireTransmitter);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                if (reader.TokenType == JsonToken.Null)
+                {
+                    throw new InvalidOperationException("Received unexpected null JSON value");
+                }
+
+                var json = JRaw.Create(reader).ToString();
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new PostCombinedTransfersWireTransmitter(PostCombinedTransfersWireTransmitterType.WireTransmitterTransferUnstructuredAddress) {
+                        WireTransmitterTransferUnstructuredAddress = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WireTransmitterTransferUnstructuredAddress>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(WireTransmitterTransferUnstructuredAddress), new PostCombinedTransfersWireTransmitter(PostCombinedTransfersWireTransmitterType.WireTransmitterTransferUnstructuredAddress), "WireTransmitterTransferUnstructuredAddress"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new PostCombinedTransfersWireTransmitter(PostCombinedTransfersWireTransmitterType.TransferStructuredAddress) {
+                        TransferStructuredAddress = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TransferStructuredAddress>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(TransferStructuredAddress), new PostCombinedTransfersWireTransmitter(PostCombinedTransfersWireTransmitterType.TransferStructuredAddress), "TransferStructuredAddress"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach (var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null)
+                {
+                    throw new InvalidOperationException("Unexpected null JSON value.");
+                }
+
+                PostCombinedTransfersWireTransmitter res = (PostCombinedTransfersWireTransmitter)value;
+
+                if (res.WireTransmitterTransferUnstructuredAddress != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.WireTransmitterTransferUnstructuredAddress));
+                    return;
+                }
+
+                if (res.TransferStructuredAddress != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.TransferStructuredAddress));
+                    return;
+                }
+
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods."
+                );
+            }
+        }
     }
 }

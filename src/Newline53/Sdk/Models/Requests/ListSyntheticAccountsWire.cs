@@ -28,7 +28,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the financial institution where the external account is held.
         /// </summary>
         [JsonProperty("counterparty_bank_address")]
-        public ListSyntheticAccountsCounterpartyBankAddress? CounterpartyBankAddress { get; set; } = null;
+        public ListSyntheticAccountsUnstructuredAddress? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
         /// Name of the financial institution where the counterparty account is held.

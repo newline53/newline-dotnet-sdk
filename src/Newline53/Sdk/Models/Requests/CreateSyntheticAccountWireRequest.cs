@@ -9,6 +9,7 @@
 #nullable enable
 namespace Newline53.Sdk.Models.Requests
 {
+    using Newline53.Sdk.Models.Components;
     using Newline53.Sdk.Models.Requests;
     using Newline53.Sdk.Utils;
     using Newtonsoft.Json;
@@ -19,10 +20,10 @@ namespace Newline53.Sdk.Models.Requests
     public class CreateSyntheticAccountWireRequest
     {
         /// <summary>
-        /// Address of the business or individual who owns the external account.
+        /// Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
         /// </summary>
-        [JsonProperty("counterparty_address")]
-        public CreateSyntheticAccountWireCounterpartyAddressRequest? CounterpartyAddress { get; set; } = null;
+        [JsonProperty("counterparty_address", NullValueHandling = NullValueHandling.Include)]
+        public CreateSyntheticAccountCounterpartyAddressUnion? CounterpartyAddress { get; set; } = null;
 
         /// <summary>
         /// Name of the business or individual who owns the counterparty Account. Required for synthetic accounts in the wire_external category. Maximum 35 characters.
@@ -34,7 +35,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the financial institution where the external account is held.
         /// </summary>
         [JsonProperty("counterparty_bank_address")]
-        public CreateSyntheticAccountCounterpartyBankAddressRequest? CounterpartyBankAddress { get; set; } = null;
+        public CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
         /// Name of the financial institution where the counterparty account is held.

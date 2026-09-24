@@ -196,14 +196,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             Phone = "5555551212",
         },
         Wire = new SyntheticAccountWire() {
-            CounterpartyAddress = new PostCombinedTransfersWireCounterpartyAddress() {
-                Line1 = "234 Xyz Rd",
-                Line2 = "APT 5",
-                Line3 = "Boston, MA 02110",
-                Country = "US",
-            },
+            CounterpartyAddress = PostCombinedTransfersCounterpartyAddressUnion.CreateCounterpartyAddressSyntheticAccountUnstructuredAddress(
+                new CounterpartyAddressSyntheticAccountUnstructuredAddress() {
+                    Line1 = "234 Xyz Rd",
+                    Line2 = "APT 5",
+                    Line3 = "Boston, MA 02110",
+                    Country = "US",
+                }
+            ),
             CounterpartyName = "Marge's Roofing Inc",
-            CounterpartyBankAddress = new PostCombinedTransfersCounterpartyBankAddress() {
+            CounterpartyBankAddress = new SyntheticAccountCounterpartyBankAddressUnstructuredAddress() {
                 Line1 = "123 Abc St.",
                 Line2 = "Boring, Oregon 97009",
                 Line3 = null,
@@ -244,9 +246,10 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
                 Country = null,
             },
             Memo = "For the 6-5-23 shipment of pineapple popsicles",
+            PurposeOfPayment = PostCombinedTransfersPurposeOfPayment.Payr,
         },
         Wire = new TransferWire() {
-            IntermediaryBankAddress = new PostCombinedTransfersIntermediaryBankAddress() {
+            IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
                 Line1 = "345 Def Ave",
                 Line2 = "San Francisco",
                 Line3 = "CA 94016",
@@ -255,14 +258,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             IntermediaryBankName = "Fidelity Fiduciary Bank",
             IntermediaryBankRoutingNumber = "923456789",
             WireInstructions = "Send ASAP",
-            WireTransmitter = new PostCombinedTransfersWireTransmitter() {
-                Name = "Marge's Roofing Inc",
-                TransmitterIdentifier = "123456789012ABC",
-                Line1 = "123 Abc St.",
-                Line2 = "Boring, Oregon 97009",
-                Line3 = null,
-                Country = "US",
-            },
+            WireTransmitter = PostCombinedTransfersWireTransmitter.CreateWireTransmitterTransferUnstructuredAddress(
+                new WireTransmitterTransferUnstructuredAddress() {
+                    Line1 = "123 Abc St.",
+                    Line2 = "Boring, Oregon 97009",
+                    Line3 = null,
+                    Country = "US",
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }
+            ),
         },
     },
 };
@@ -313,14 +318,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             Phone = "5555551212",
         },
         Wire = new SyntheticAccountWire() {
-            CounterpartyAddress = new PostCombinedTransfersWireCounterpartyAddress() {
-                Line1 = "234 Xyz Rd",
-                Line2 = "APT 5",
-                Line3 = "Boston, MA 02110",
-                Country = "US",
-            },
+            CounterpartyAddress = PostCombinedTransfersCounterpartyAddressUnion.CreateCounterpartyAddressSyntheticAccountUnstructuredAddress(
+                new CounterpartyAddressSyntheticAccountUnstructuredAddress() {
+                    Line1 = "234 Xyz Rd",
+                    Line2 = "APT 5",
+                    Line3 = "Boston, MA 02110",
+                    Country = "US",
+                }
+            ),
             CounterpartyName = "Marge's Roofing Inc",
-            CounterpartyBankAddress = new PostCombinedTransfersCounterpartyBankAddress() {
+            CounterpartyBankAddress = new SyntheticAccountCounterpartyBankAddressUnstructuredAddress() {
                 Line1 = "123 Abc St.",
                 Line2 = "Boring, Oregon 97009",
                 Line3 = null,
@@ -361,9 +368,10 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
                 Country = null,
             },
             Memo = "For the 6-5-23 shipment of pineapple popsicles",
+            PurposeOfPayment = PostCombinedTransfersPurposeOfPayment.Payr,
         },
         Wire = new TransferWire() {
-            IntermediaryBankAddress = new PostCombinedTransfersIntermediaryBankAddress() {
+            IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
                 Line1 = "345 Def Ave",
                 Line2 = "San Francisco",
                 Line3 = "CA 94016",
@@ -372,14 +380,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             IntermediaryBankName = "Fidelity Fiduciary Bank",
             IntermediaryBankRoutingNumber = "923456789",
             WireInstructions = "Send ASAP",
-            WireTransmitter = new PostCombinedTransfersWireTransmitter() {
-                Name = "Marge's Roofing Inc",
-                TransmitterIdentifier = "123456789012ABC",
-                Line1 = "123 Abc St.",
-                Line2 = "Boring, Oregon 97009",
-                Line3 = null,
-                Country = "US",
-            },
+            WireTransmitter = PostCombinedTransfersWireTransmitter.CreateWireTransmitterTransferUnstructuredAddress(
+                new WireTransmitterTransferUnstructuredAddress() {
+                    Line1 = "123 Abc St.",
+                    Line2 = "Boring, Oregon 97009",
+                    Line3 = null,
+                    Country = "US",
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }
+            ),
         },
     },
 };
@@ -430,14 +440,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             Phone = "5555551212",
         },
         Wire = new SyntheticAccountWire() {
-            CounterpartyAddress = new PostCombinedTransfersWireCounterpartyAddress() {
-                Line1 = "234 Xyz Rd",
-                Line2 = "APT 5",
-                Line3 = "Boston, MA 02110",
-                Country = "US",
-            },
+            CounterpartyAddress = PostCombinedTransfersCounterpartyAddressUnion.CreateCounterpartyAddressSyntheticAccountUnstructuredAddress(
+                new CounterpartyAddressSyntheticAccountUnstructuredAddress() {
+                    Line1 = "234 Xyz Rd",
+                    Line2 = "APT 5",
+                    Line3 = "Boston, MA 02110",
+                    Country = "US",
+                }
+            ),
             CounterpartyName = "Marge's Roofing Inc",
-            CounterpartyBankAddress = new PostCombinedTransfersCounterpartyBankAddress() {
+            CounterpartyBankAddress = new SyntheticAccountCounterpartyBankAddressUnstructuredAddress() {
                 Line1 = "123 Abc St.",
                 Line2 = "Boring, Oregon 97009",
                 Line3 = null,
@@ -478,9 +490,10 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
                 Country = null,
             },
             Memo = "For the 6-5-23 shipment of pineapple popsicles",
+            PurposeOfPayment = PostCombinedTransfersPurposeOfPayment.Payr,
         },
         Wire = new TransferWire() {
-            IntermediaryBankAddress = new PostCombinedTransfersIntermediaryBankAddress() {
+            IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
                 Line1 = "345 Def Ave",
                 Line2 = "San Francisco",
                 Line3 = "CA 94016",
@@ -489,14 +502,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             IntermediaryBankName = "Fidelity Fiduciary Bank",
             IntermediaryBankRoutingNumber = "923456789",
             WireInstructions = "Send ASAP",
-            WireTransmitter = new PostCombinedTransfersWireTransmitter() {
-                Name = "Marge's Roofing Inc",
-                TransmitterIdentifier = "123456789012ABC",
-                Line1 = "123 Abc St.",
-                Line2 = "Boring, Oregon 97009",
-                Line3 = null,
-                Country = "US",
-            },
+            WireTransmitter = PostCombinedTransfersWireTransmitter.CreateWireTransmitterTransferUnstructuredAddress(
+                new WireTransmitterTransferUnstructuredAddress() {
+                    Line1 = "123 Abc St.",
+                    Line2 = "Boring, Oregon 97009",
+                    Line3 = null,
+                    Country = "US",
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }
+            ),
         },
     },
 };
@@ -654,14 +669,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             Phone = "5555551212",
         },
         Wire = new SyntheticAccountWire() {
-            CounterpartyAddress = new PostCombinedTransfersWireCounterpartyAddress() {
-                Line1 = "234 Xyz Rd",
-                Line2 = "APT 5",
-                Line3 = "Boston, MA 02110",
-                Country = "US",
-            },
+            CounterpartyAddress = PostCombinedTransfersCounterpartyAddressUnion.CreateCounterpartyAddressSyntheticAccountUnstructuredAddress(
+                new CounterpartyAddressSyntheticAccountUnstructuredAddress() {
+                    Line1 = "234 Xyz Rd",
+                    Line2 = "APT 5",
+                    Line3 = "Boston, MA 02110",
+                    Country = "US",
+                }
+            ),
             CounterpartyName = "Marge's Roofing Inc",
-            CounterpartyBankAddress = new PostCombinedTransfersCounterpartyBankAddress() {
+            CounterpartyBankAddress = new SyntheticAccountCounterpartyBankAddressUnstructuredAddress() {
                 Line1 = "123 Abc St.",
                 Line2 = "Boring, Oregon 97009",
                 Line3 = null,
@@ -702,9 +719,10 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
                 Country = null,
             },
             Memo = "For the 6-5-23 shipment of pineapple popsicles",
+            PurposeOfPayment = PostCombinedTransfersPurposeOfPayment.Payr,
         },
         Wire = new TransferWire() {
-            IntermediaryBankAddress = new PostCombinedTransfersIntermediaryBankAddress() {
+            IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
                 Line1 = "345 Def Ave",
                 Line2 = "San Francisco",
                 Line3 = "CA 94016",
@@ -713,14 +731,16 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
             IntermediaryBankName = "Fidelity Fiduciary Bank",
             IntermediaryBankRoutingNumber = "923456789",
             WireInstructions = "Send ASAP",
-            WireTransmitter = new PostCombinedTransfersWireTransmitter() {
-                Name = "Marge's Roofing Inc",
-                TransmitterIdentifier = "123456789012ABC",
-                Line1 = "123 Abc St.",
-                Line2 = "Boring, Oregon 97009",
-                Line3 = null,
-                Country = "US",
-            },
+            WireTransmitter = PostCombinedTransfersWireTransmitter.CreateWireTransmitterTransferUnstructuredAddress(
+                new WireTransmitterTransferUnstructuredAddress() {
+                    Line1 = "123 Abc St.",
+                    Line2 = "Boring, Oregon 97009",
+                    Line3 = null,
+                    Country = "US",
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }
+            ),
         },
     },
 };
@@ -756,20 +776,24 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
         InitiatorType = PostCombinedTransfersInitiatorType.Customer,
         UsdTransferAmount = "12.34",
         Wire = new TransferWire() {
-            IntermediaryBankAddress = new PostCombinedTransfersIntermediaryBankAddress() {
+            IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
                 Line1 = "123 Main St",
                 Line2 = "Brooklyn NY",
                 Country = "US",
             },
             IntermediaryBankName = "Big Bank Inc",
             IntermediaryBankRoutingNumber = "123456789",
-            WireTransmitter = new PostCombinedTransfersWireTransmitter() {
-                Name = "Bunker LLC",
-                TransmitterIdentifier = "1234567890",
-                Line1 = "456 Second St",
-                Line2 = "Queens NY",
-                Country = "US",
-            },
+            WireTransmitter = PostCombinedTransfersWireTransmitter.CreateTransferStructuredAddress(
+                new TransferStructuredAddress() {
+                    BuildingNumber = "456",
+                    StreetName = "Second St",
+                    City = "Queens",
+                    State = "NY",
+                    Country = "US",
+                    Name = "Bunker LLC",
+                    TransmitterIdentifier = "1234567890",
+                }
+            ),
         },
     },
 };
@@ -811,20 +835,24 @@ PostCombinedTransfersRequest req = new PostCombinedTransfersRequest() {
         InitiatorType = PostCombinedTransfersInitiatorType.Customer,
         UsdTransferAmount = "12.34",
         Wire = new TransferWire() {
-            IntermediaryBankAddress = new PostCombinedTransfersIntermediaryBankAddress() {
+            IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
                 Line1 = "123 Main St",
                 Line2 = "Brooklyn NY",
                 Country = "US",
             },
             IntermediaryBankName = "Big Bank Inc",
             IntermediaryBankRoutingNumber = "123456789",
-            WireTransmitter = new PostCombinedTransfersWireTransmitter() {
-                Name = "Bunker LLC",
-                TransmitterIdentifier = "1234567890",
-                Line1 = "456 Second St",
-                Line2 = "Queens NY",
-                Country = "US",
-            },
+            WireTransmitter = PostCombinedTransfersWireTransmitter.CreateTransferStructuredAddress(
+                new TransferStructuredAddress() {
+                    BuildingNumber = "456",
+                    StreetName = "Second St",
+                    City = "Queens",
+                    State = "NY",
+                    Country = "US",
+                    Name = "Bunker LLC",
+                    TransmitterIdentifier = "1234567890",
+                }
+            ),
         },
     },
 };

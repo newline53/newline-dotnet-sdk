@@ -13,7 +13,7 @@ namespace Newline53.Sdk.Models.Requests
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Address of the business or individual who owns the external account.
+    /// Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
     /// </summary>
     public class CreateSyntheticAccountWireCounterpartyAddressResponse
     {
@@ -34,6 +34,36 @@ namespace Newline53.Sdk.Models.Requests
         /// </summary>
         [JsonProperty("line3")]
         public string? Line3 { get; set; } = null;
+
+        /// <summary>
+        /// Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("building_number")]
+        public string? BuildingNumber { get; set; } = null;
+
+        /// <summary>
+        /// Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("street_name")]
+        public string? StreetName { get; set; } = null;
+
+        /// <summary>
+        /// City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("city")]
+        public string? City { get; set; } = null;
+
+        /// <summary>
+        /// State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("state")]
+        public string? State { get; set; } = null;
+
+        /// <summary>
+        /// US ZIP code (5-digit) or ZIP+4.
+        /// </summary>
+        [JsonProperty("postal_code")]
+        public string? PostalCode { get; set; } = null;
 
         [JsonProperty("country")]
         public string? Country { get; set; } = null;

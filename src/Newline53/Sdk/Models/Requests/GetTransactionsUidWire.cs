@@ -28,7 +28,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the financial institution where the external account is held.
         /// </summary>
         [JsonProperty("counterparty_bank_address")]
-        public GetTransactionsUidWireCounterpartyBankAddress? CounterpartyBankAddress { get; set; } = null;
+        public GetTransactionsUidCounterpartyBankAddressUnstructuredAddress? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
         /// Name of the financial institution where the counterparty account is held.
@@ -52,7 +52,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
         /// </summary>
         [JsonProperty("intermediary_bank_address")]
-        public GetTransactionsUidIntermediaryBankAddress? IntermediaryBankAddress { get; set; }
+        public GetTransactionsUidIntermediaryBankAddressUnstructuredAddress? IntermediaryBankAddress { get; set; }
 
         /// <summary>
         /// Name of the intermediary bank, when applicable. For wires only. Maximum 35 characters.

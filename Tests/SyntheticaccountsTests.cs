@@ -165,14 +165,14 @@ public class SyntheticaccountsTests
                 Phone = "5555551212",
             },
             Wire = new CreateSyntheticAccountWireRequest() {
-                CounterpartyAddress = new CreateSyntheticAccountWireCounterpartyAddressRequest() {
+                CounterpartyAddress = CreateSyntheticAccountCounterpartyAddressUnion.CreateCreateSyntheticAccountCounterpartyAddressUnstructuredAddress(new CreateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                     Line1 = "234 Xyz Rd",
                     Line2 = "APT 5",
                     Line3 = "Boston, MA 02110",
                     Country = "US",
-                },
+                }),
                 CounterpartyName = "Marge's Roofing Inc",
-                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressRequest() {
+                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
@@ -229,14 +229,14 @@ public class SyntheticaccountsTests
                 Phone = "5555551212",
             },
             Wire = new CreateSyntheticAccountWireRequest() {
-                CounterpartyAddress = new CreateSyntheticAccountWireCounterpartyAddressRequest() {
+                CounterpartyAddress = CreateSyntheticAccountCounterpartyAddressUnion.CreateCreateSyntheticAccountCounterpartyAddressUnstructuredAddress(new CreateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                     Line1 = "234 Xyz Rd",
                     Line2 = "APT 5",
                     Line3 = "Boston, MA 02110",
                     Country = "US",
-                },
+                }),
                 CounterpartyName = "Marge's Roofing Inc",
-                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressRequest() {
+                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
@@ -293,14 +293,14 @@ public class SyntheticaccountsTests
                 Phone = "5555551212",
             },
             Wire = new CreateSyntheticAccountWireRequest() {
-                CounterpartyAddress = new CreateSyntheticAccountWireCounterpartyAddressRequest() {
+                CounterpartyAddress = CreateSyntheticAccountCounterpartyAddressUnion.CreateCreateSyntheticAccountCounterpartyAddressUnstructuredAddress(new CreateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                     Line1 = "234 Xyz Rd",
                     Line2 = "APT 5",
                     Line3 = "Boston, MA 02110",
                     Country = "US",
-                },
+                }),
                 CounterpartyName = "Marge's Roofing Inc",
-                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressRequest() {
+                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
@@ -357,14 +357,14 @@ public class SyntheticaccountsTests
                 Phone = "5555551212",
             },
             Wire = new CreateSyntheticAccountWireRequest() {
-                CounterpartyAddress = new CreateSyntheticAccountWireCounterpartyAddressRequest() {
+                CounterpartyAddress = CreateSyntheticAccountCounterpartyAddressUnion.CreateCreateSyntheticAccountCounterpartyAddressUnstructuredAddress(new CreateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                     Line1 = "234 Xyz Rd",
                     Line2 = "APT 5",
                     Line3 = "Boston, MA 02110",
                     Country = "US",
-                },
+                }),
                 CounterpartyName = "Marge's Roofing Inc",
-                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressRequest() {
+                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
@@ -502,14 +502,14 @@ public class SyntheticaccountsTests
                     Phone = "5555551212",
                 },
                 Wire = new UpdateSyntheticAccountWireRequest() {
-                    CounterpartyAddress = new UpdateSyntheticAccountWireCounterpartyAddressRequest() {
+                    CounterpartyAddress = UpdateSyntheticAccountCounterpartyAddressUnion.CreateUpdateSyntheticAccountCounterpartyAddressUnstructuredAddress(new UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                         Line1 = "234 Xyz Rd",
                         Line2 = "APT 5",
                         Line3 = "Boston, MA 02110",
                         Country = "US",
-                    },
+                    }),
                     CounterpartyName = "Marge's Roofing Inc",
-                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressRequest() {
+                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Abc St.",
                         Line2 = "Boring, Oregon 97009",
                         Line3 = null,
@@ -566,14 +566,14 @@ public class SyntheticaccountsTests
                     Phone = "5555551212",
                 },
                 Wire = new UpdateSyntheticAccountWireRequest() {
-                    CounterpartyAddress = new UpdateSyntheticAccountWireCounterpartyAddressRequest() {
+                    CounterpartyAddress = UpdateSyntheticAccountCounterpartyAddressUnion.CreateUpdateSyntheticAccountCounterpartyAddressUnstructuredAddress(new UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                         Line1 = "234 Xyz Rd",
                         Line2 = "APT 5",
                         Line3 = "Boston, MA 02110",
                         Country = "US",
-                    },
+                    }),
                     CounterpartyName = "Marge's Roofing Inc",
-                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressRequest() {
+                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Abc St.",
                         Line2 = "Boring, Oregon 97009",
                         Line3 = null,
@@ -630,14 +630,14 @@ public class SyntheticaccountsTests
                     Phone = "5555551212",
                 },
                 Wire = new UpdateSyntheticAccountWireRequest() {
-                    CounterpartyAddress = new UpdateSyntheticAccountWireCounterpartyAddressRequest() {
+                    CounterpartyAddress = UpdateSyntheticAccountCounterpartyAddressUnion.CreateUpdateSyntheticAccountCounterpartyAddressUnstructuredAddress(new UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                         Line1 = "234 Xyz Rd",
                         Line2 = "APT 5",
                         Line3 = "Boston, MA 02110",
                         Country = "US",
-                    },
+                    }),
                     CounterpartyName = "Marge's Roofing Inc",
-                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressRequest() {
+                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Abc St.",
                         Line2 = "Boring, Oregon 97009",
                         Line3 = null,
@@ -694,14 +694,14 @@ public class SyntheticaccountsTests
                     Phone = "5555551212",
                 },
                 Wire = new UpdateSyntheticAccountWireRequest() {
-                    CounterpartyAddress = new UpdateSyntheticAccountWireCounterpartyAddressRequest() {
+                    CounterpartyAddress = UpdateSyntheticAccountCounterpartyAddressUnion.CreateUpdateSyntheticAccountCounterpartyAddressUnstructuredAddress(new UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
                         Line1 = "234 Xyz Rd",
                         Line2 = "APT 5",
                         Line3 = "Boston, MA 02110",
                         Country = "US",
-                    },
+                    }),
                     CounterpartyName = "Marge's Roofing Inc",
-                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressRequest() {
+                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Abc St.",
                         Line2 = "Boring, Oregon 97009",
                         Line3 = null,
@@ -759,6 +759,154 @@ public class SyntheticaccountsTests
             client: testHttpClient
         );
         var res = await sdk.SyntheticAccounts.GetClosingBalanceAsync(uid: "<id>");
+
+        // handle response
+        Assert.NotNull(res);
+        Assert.Equal(200, (int)res.HttpMeta.Response.StatusCode);
+    }
+
+    [Fact]
+    public async Task TestSyntheticaccounts_CreateSyntheticAccountWireSyntheticAccountStructured()
+    {
+
+        var testHttpClient = CommonHelpers.CreateTestHTTPClient("createSyntheticAccount-wire_synthetic_account_structured");
+        var sdk = new NewlineSDK(
+            serverUrl: Environment.GetEnvironmentVariable("TEST_SERVER_URL") ?? "http://localhost:18080",
+            security: new Security() {
+                ProgramUid = "NEWLINE_PROGRAM_UID",
+                HmacKey = "NEWLINE_HMAC_KEY",
+            },
+            client: testHttpClient
+        );
+        CreateSyntheticAccountRequest req = new CreateSyntheticAccountRequest() {
+            ExternalUid = "partner-generated-id",
+            Name = "New Resource Name",
+            PoolUid = "kaxHFJnWvJxRJZxq",
+            SyntheticAccountTypeUid = "fRMwt6H14ovFUz1s",
+            RoutingNumber = "123456789",
+            AccountNumber = "123456789012",
+            ExternalProcessorToken = "processor-sandbox-96d86f35-ef58-4e4a-826f-4870b5d677f2",
+            Ach = new CreateSyntheticAccountAchRequest() {
+                AccountType = CreateSyntheticAccountAccountTypeRequest.Checking,
+                CounterpartyName = "Thelma's Flooring LLC",
+            },
+            InstantPayment = new CreateSyntheticAccountInstantPaymentRequest() {
+                CounterpartyAddress = new CreateSyntheticAccountInstantPaymentCounterpartyAddressRequest() {
+                    StreetNumber = "123abc",
+                    Street1 = "Abc St.",
+                    Street2 = "Suite 4A",
+                    City = "Chicago",
+                    State = "IL",
+                    PostalCode = "60301",
+                    Country = null,
+                },
+                CounterpartyName = "Marge's Roofing Inc",
+                Email = "payments@veryexcellentbusiness.com",
+                Phone = "5555551212",
+            },
+            Wire = new CreateSyntheticAccountWireRequest() {
+                CounterpartyAddress = CreateSyntheticAccountCounterpartyAddressUnion.CreateCreateSyntheticAccountCounterpartyAddressUnstructuredAddress(new CreateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
+                    Line1 = "234 Xyz Rd",
+                    Line2 = "APT 5",
+                    Line3 = "Boston, MA 02110",
+                    Country = "US",
+                }),
+                CounterpartyName = "Marge's Roofing Inc",
+                CounterpartyBankAddress = new CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
+                    Line1 = "123 Abc St.",
+                    Line2 = "Boring, Oregon 97009",
+                    Line3 = null,
+                    Country = null,
+                },
+                CounterpartyBankName = "East West Regional Bank",
+            },
+        };
+
+        var res = await sdk.SyntheticAccounts.CreateAsync(req);
+
+        // handle response
+        Assert.NotNull(res);
+        Assert.Equal(201, (int)res.HttpMeta.Response.StatusCode);
+    }
+
+    [Fact]
+    public async Task TestSyntheticaccounts_GetSyntheticAccountWireSyntheticAccountStructured()
+    {
+
+        var testHttpClient = CommonHelpers.CreateTestHTTPClient("getSyntheticAccount-wire_synthetic_account_structured");
+        var sdk = new NewlineSDK(
+            serverUrl: Environment.GetEnvironmentVariable("TEST_SERVER_URL") ?? "http://localhost:18080",
+            security: new Security() {
+                ProgramUid = "NEWLINE_PROGRAM_UID",
+                HmacKey = "NEWLINE_HMAC_KEY",
+            },
+            client: testHttpClient
+        );
+        var res = await sdk.SyntheticAccounts.GetAsync(uid: "<id>");
+
+        // handle response
+        Assert.NotNull(res);
+        Assert.Equal(200, (int)res.HttpMeta.Response.StatusCode);
+    }
+
+    [Fact]
+    public async Task TestSyntheticaccounts_UpdateSyntheticAccountWireSyntheticAccountStructured()
+    {
+
+        var testHttpClient = CommonHelpers.CreateTestHTTPClient("updateSyntheticAccount-wire_synthetic_account_structured");
+        var sdk = new NewlineSDK(
+            serverUrl: Environment.GetEnvironmentVariable("TEST_SERVER_URL") ?? "http://localhost:18080",
+            security: new Security() {
+                ProgramUid = "NEWLINE_PROGRAM_UID",
+                HmacKey = "NEWLINE_HMAC_KEY",
+            },
+            client: testHttpClient
+        );
+        var res = await sdk.SyntheticAccounts.UpdateAsync(
+            uid: "<id>",
+            body: new UpdateSyntheticAccountRequestBody() {
+                ExternalUid = "partner-generated-id",
+                Name = "New Resource Name",
+                PoolUid = "kaxHFJnWvJxRJZxq",
+                SyntheticAccountTypeUid = "fRMwt6H14ovFUz1s",
+                RoutingNumber = "123456789",
+                AccountNumber = "123456789012",
+                Ach = new UpdateSyntheticAccountAchRequest() {
+                    AccountType = UpdateSyntheticAccountAccountTypeRequest.Checking,
+                    CounterpartyName = "Thelma's Flooring LLC",
+                },
+                InstantPayment = new UpdateSyntheticAccountInstantPaymentRequest() {
+                    CounterpartyAddress = new UpdateSyntheticAccountInstantPaymentCounterpartyAddressRequest() {
+                        StreetNumber = "123abc",
+                        Street1 = "Abc St.",
+                        Street2 = "Suite 4A",
+                        City = "Chicago",
+                        State = "IL",
+                        PostalCode = "60301",
+                        Country = null,
+                    },
+                    CounterpartyName = "Marge's Roofing Inc",
+                    Email = "payments@veryexcellentbusiness.com",
+                    Phone = "5555551212",
+                },
+                Wire = new UpdateSyntheticAccountWireRequest() {
+                    CounterpartyAddress = UpdateSyntheticAccountCounterpartyAddressUnion.CreateUpdateSyntheticAccountCounterpartyAddressUnstructuredAddress(new UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress() {
+                        Line1 = "234 Xyz Rd",
+                        Line2 = "APT 5",
+                        Line3 = "Boston, MA 02110",
+                        Country = "US",
+                    }),
+                    CounterpartyName = "Marge's Roofing Inc",
+                    CounterpartyBankAddress = new UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
+                        Line1 = "123 Abc St.",
+                        Line2 = "Boring, Oregon 97009",
+                        Line3 = null,
+                        Country = null,
+                    },
+                    CounterpartyBankName = "East West Regional Bank",
+                },
+            }
+        );
 
         // handle response
         Assert.NotNull(res);

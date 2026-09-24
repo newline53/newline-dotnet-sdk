@@ -18,21 +18,54 @@ namespace Newline53.Sdk.Models.Requests
     public class GetTransactionsUidWireCounterpartyAddress
     {
         /// <summary>
-        /// Part of an unparsed address. Data may vary or be null.
+        /// Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
         /// </summary>
         [JsonProperty("line1")]
-        public string? Line1 { get; set; }
+        public string? Line1 { get; set; } = null;
 
         /// <summary>
-        /// Part of an unparsed address. Data may vary or be null.
+        /// Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
         /// </summary>
         [JsonProperty("line2")]
-        public string? Line2 { get; set; }
+        public string? Line2 { get; set; } = null;
 
         /// <summary>
-        /// Part of an unparsed address. Data may vary or be null.
+        /// Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
         /// </summary>
         [JsonProperty("line3")]
-        public string? Line3 { get; set; }
+        public string? Line3 { get; set; } = null;
+
+        /// <summary>
+        /// Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("building_number")]
+        public string? BuildingNumber { get; set; } = null;
+
+        /// <summary>
+        /// Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("street_name")]
+        public string? StreetName { get; set; } = null;
+
+        /// <summary>
+        /// City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("city")]
+        public string? City { get; set; } = null;
+
+        /// <summary>
+        /// State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("state")]
+        public string? State { get; set; } = null;
+
+        /// <summary>
+        /// US ZIP code (5-digit) or ZIP+4.
+        /// </summary>
+        [JsonProperty("postal_code")]
+        public string? PostalCode { get; set; } = null;
+
+        [JsonProperty("country")]
+        public string? Country { get; set; } = null;
     }
 }

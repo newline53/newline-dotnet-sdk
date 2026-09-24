@@ -380,4 +380,24 @@ public class TransactionsTests
         Assert.NotNull(res);
         Assert.Equal(200, (int)res.HttpMeta.Response.StatusCode);
     }
+
+    [Fact]
+    public async Task TestTransactions_GetTransactionsUidWireTransactionStructured()
+    {
+
+        var testHttpClient = CommonHelpers.CreateTestHTTPClient("get_/transactions/{uid}-wire_transaction_structured");
+        var sdk = new NewlineSDK(
+            serverUrl: Environment.GetEnvironmentVariable("TEST_SERVER_URL") ?? "http://localhost:18080",
+            security: new Security() {
+                ProgramUid = "NEWLINE_PROGRAM_UID",
+                HmacKey = "NEWLINE_HMAC_KEY",
+            },
+            client: testHttpClient
+        );
+        var res = await sdk.Transactions.GetAsync(uid: "<id>");
+
+        // handle response
+        Assert.NotNull(res);
+        Assert.Equal(200, (int)res.HttpMeta.Response.StatusCode);
+    }
 }

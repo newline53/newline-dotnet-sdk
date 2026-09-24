@@ -129,6 +129,7 @@ public class TransfersTests
                     Country = null,
                 },
                 Memo = "To unfreeze the prince's assets",
+                PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
             },
         };
 
@@ -161,7 +162,7 @@ public class TransfersTests
             InitiatorType = CreateTransferInitiatorTypeRequest.Customer,
             UsdTransferAmount = "12.34",
             Wire = new CreateTransferWireRequest() {
-                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
                     Line1 = "345 Def Ave",
                     Line2 = "San Francisco",
                     Line3 = "CA 94016",
@@ -170,12 +171,12 @@ public class TransfersTests
                 IntermediaryBankName = "Fidelity Fiduciary Bank",
                 IntermediaryBankRoutingNumber = "923456789",
                 WireInstructions = "Please send ASAP",
-                WireTransmitter = new CreateTransferWireTransmitterRequest() {
-                    Name = "Top Tier Tacos",
-                    TransmitterIdentifier = "123456789",
+                WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(new CreateTransferWireTransmitterUnstructuredAddress() {
                     Line1 = "123 Abc St.",
                     Country = "US",
-                },
+                    Name = "Top Tier Tacos",
+                    TransmitterIdentifier = "123456789",
+                }),
             },
         };
 
@@ -231,9 +232,10 @@ public class TransfersTests
                     Country = null,
                 },
                 Memo = "For the 6-5-23 shipment of pineapple popsicles",
+                PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
             },
             Wire = new CreateTransferWireRequest() {
-                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
                     Line1 = "345 Def Ave",
                     Line2 = "San Francisco",
                     Line3 = "CA 94016",
@@ -242,14 +244,14 @@ public class TransfersTests
                 IntermediaryBankName = "Fidelity Fiduciary Bank",
                 IntermediaryBankRoutingNumber = "923456789",
                 WireInstructions = "Send ASAP",
-                WireTransmitter = new CreateTransferWireTransmitterRequest() {
-                    Name = "Marge's Roofing Inc",
-                    TransmitterIdentifier = "123456789012ABC",
+                WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(new CreateTransferWireTransmitterUnstructuredAddress() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
                     Country = "US",
-                },
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }),
             },
         };
 
@@ -305,9 +307,10 @@ public class TransfersTests
                     Country = null,
                 },
                 Memo = "For the 6-5-23 shipment of pineapple popsicles",
+                PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
             },
             Wire = new CreateTransferWireRequest() {
-                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
                     Line1 = "345 Def Ave",
                     Line2 = "San Francisco",
                     Line3 = "CA 94016",
@@ -316,14 +319,14 @@ public class TransfersTests
                 IntermediaryBankName = "Fidelity Fiduciary Bank",
                 IntermediaryBankRoutingNumber = "923456789",
                 WireInstructions = "Send ASAP",
-                WireTransmitter = new CreateTransferWireTransmitterRequest() {
-                    Name = "Marge's Roofing Inc",
-                    TransmitterIdentifier = "123456789012ABC",
+                WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(new CreateTransferWireTransmitterUnstructuredAddress() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
                     Country = "US",
-                },
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }),
             },
         };
 
@@ -379,9 +382,10 @@ public class TransfersTests
                     Country = null,
                 },
                 Memo = "For the 6-5-23 shipment of pineapple popsicles",
+                PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
             },
             Wire = new CreateTransferWireRequest() {
-                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
                     Line1 = "345 Def Ave",
                     Line2 = "San Francisco",
                     Line3 = "CA 94016",
@@ -390,14 +394,14 @@ public class TransfersTests
                 IntermediaryBankName = "Fidelity Fiduciary Bank",
                 IntermediaryBankRoutingNumber = "923456789",
                 WireInstructions = "Send ASAP",
-                WireTransmitter = new CreateTransferWireTransmitterRequest() {
-                    Name = "Marge's Roofing Inc",
-                    TransmitterIdentifier = "123456789012ABC",
+                WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(new CreateTransferWireTransmitterUnstructuredAddress() {
                     Line1 = "123 Abc St.",
                     Line2 = "Boring, Oregon 97009",
                     Line3 = null,
                     Country = "US",
-                },
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }),
             },
         };
 
@@ -508,6 +512,101 @@ public class TransfersTests
                 CancellationReason = "Transfer submitted by accident",
             }
         );
+
+        // handle response
+        Assert.NotNull(res);
+        Assert.Equal(200, (int)res.HttpMeta.Response.StatusCode);
+    }
+
+    [Fact]
+    public async Task TestTransfers_CreateTransferWireTransferStructured()
+    {
+
+        var testHttpClient = CommonHelpers.CreateTestHTTPClient("createTransfer-wire_transfer_structured");
+        var sdk = new NewlineSDK(
+            serverUrl: Environment.GetEnvironmentVariable("TEST_SERVER_URL") ?? "http://localhost:18080",
+            security: new Security() {
+                ProgramUid = "NEWLINE_PROGRAM_UID",
+                HmacKey = "NEWLINE_HMAC_KEY",
+            },
+            client: testHttpClient
+        );
+        CreateTransferRequest req = new CreateTransferRequest() {
+            ExternalUid = "partner-generated-id",
+            SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
+            DestinationSyntheticAccountUid = "exMDShw6yM3NHLYV",
+            InitiatingCustomerUid = "iDtmSA52zRhgN4iy",
+            DestinationCustomerUid = "iDtmSA52zRhgN4iy",
+            InitiatorType = CreateTransferInitiatorTypeRequest.Customer,
+            UsdTransferAmount = "12.34",
+            Ach = new CreateTransferAchRequest() {
+                OriginatorName = "J. Fred Muggs",
+                CompanyId = "ABC-123456",
+                CompanyDiscretionaryData = "ABC.123",
+                Prenote = false,
+                SecCode = CreateTransferSecCodeRequest.Cie,
+                PaymentType = CreateTransferPaymentTypeRequest.St,
+                EntryDescription = "ACH Entry",
+                ServiceProcessing = CreateTransferServiceProcessingRequest.Sameday,
+                EffectiveEntryDate = "2023-12-01",
+                IdNumber = "4270465600",
+            },
+            InstantPayment = new CreateTransferInstantPaymentRequest() {
+                InstantPaymentTransmitter = new CreateTransferInstantPaymentTransmitter() {
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                    StreetNumber = "123abc",
+                    Street1 = "Abc St.",
+                    City = "Chicago",
+                    State = "IL",
+                    PostalCode = "60301",
+                    Country = null,
+                },
+                Memo = "For the 6-5-23 shipment of pineapple popsicles",
+                PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
+            },
+            Wire = new CreateTransferWireRequest() {
+                IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
+                    Line1 = "345 Def Ave",
+                    Line2 = "San Francisco",
+                    Line3 = "CA 94016",
+                    Country = "US",
+                },
+                IntermediaryBankName = "Fidelity Fiduciary Bank",
+                IntermediaryBankRoutingNumber = "923456789",
+                WireInstructions = "Send ASAP",
+                WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(new CreateTransferWireTransmitterUnstructuredAddress() {
+                    Line1 = "123 Abc St.",
+                    Line2 = "Boring, Oregon 97009",
+                    Line3 = null,
+                    Country = "US",
+                    Name = "Marge's Roofing Inc",
+                    TransmitterIdentifier = "123456789012ABC",
+                }),
+            },
+        };
+
+        var res = await sdk.Transfers.CreateAsync(req);
+
+        // handle response
+        Assert.NotNull(res);
+        Assert.Equal(201, (int)res.HttpMeta.Response.StatusCode);
+    }
+
+    [Fact]
+    public async Task TestTransfers_GetTransferWireTransferStructured()
+    {
+
+        var testHttpClient = CommonHelpers.CreateTestHTTPClient("getTransfer-wire_transfer_structured");
+        var sdk = new NewlineSDK(
+            serverUrl: Environment.GetEnvironmentVariable("TEST_SERVER_URL") ?? "http://localhost:18080",
+            security: new Security() {
+                ProgramUid = "NEWLINE_PROGRAM_UID",
+                HmacKey = "NEWLINE_HMAC_KEY",
+            },
+            client: testHttpClient
+        );
+        var res = await sdk.Transfers.GetAsync(uid: "<id>");
 
         // handle response
         Assert.NotNull(res);

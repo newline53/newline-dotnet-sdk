@@ -9,45 +9,211 @@
 #nullable enable
 namespace Newline53.Sdk.Models.Requests
 {
+    using Newline53.Sdk.Models.Requests;
     using Newline53.Sdk.Utils;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+
+    public class CreateTransferWireTransmitterRequestType
+    {
+        private CreateTransferWireTransmitterRequestType(string value)
+        {
+            Value = value;
+        }
+
+        public string Value { get; private set; }
+
+        public static CreateTransferWireTransmitterRequestType CreateTransferWireTransmitterUnstructuredAddress
+        {
+            get {
+                return new CreateTransferWireTransmitterRequestType("createTransfer_wire_transmitter_Unstructured Address");
+            }
+        }
+
+        public static CreateTransferWireTransmitterRequestType CreateTransferStructuredAddress
+        {
+            get {
+                return new CreateTransferWireTransmitterRequestType("createTransfer_Structured Address");
+            }
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
+        public static implicit operator String(CreateTransferWireTransmitterRequestType v)
+        {
+            return v.Value;
+        }
+        public static CreateTransferWireTransmitterRequestType FromString(string v)
+        {
+            switch (v)
+            {
+                case "createTransfer_wire_transmitter_Unstructured Address":
+                    return CreateTransferWireTransmitterUnstructuredAddress;
+                case "createTransfer_Structured Address":
+                    return CreateTransferStructuredAddress;
+                default:
+                    throw new ArgumentException("Invalid value for CreateTransferWireTransmitterRequestType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((CreateTransferWireTransmitterRequestType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
 
     /// <summary>
-    /// Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+    /// Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
     /// </summary>
+    [JsonConverter(typeof(CreateTransferWireTransmitterRequest.CreateTransferWireTransmitterRequestConverter))]
     public class CreateTransferWireTransmitterRequest
     {
-        /// <summary>
-        /// Name of the Transmitter.
-        /// </summary>
-        [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public CreateTransferWireTransmitterRequest(CreateTransferWireTransmitterRequestType type)
+        {
+            Type = type;
+        }
 
-        /// <summary>
-        /// Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
-        /// </summary>
-        [JsonProperty("transmitter_identifier")]
-        public string TransmitterIdentifier { get; set; } = default!;
+        [SpeakeasyMetadata("form:explode=true")]
+        public CreateTransferWireTransmitterUnstructuredAddress? CreateTransferWireTransmitterUnstructuredAddress { get; set; }
 
-        /// <summary>
-        /// Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-        /// </summary>
-        [JsonProperty("line1", NullValueHandling = NullValueHandling.Include)]
-        public string? Line1 { get; set; }
+        [SpeakeasyMetadata("form:explode=true")]
+        public CreateTransferStructuredAddress? CreateTransferStructuredAddress { get; set; }
 
-        /// <summary>
-        /// Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-        /// </summary>
-        [JsonProperty("line2")]
-        public string? Line2 { get; set; } = null;
+        public CreateTransferWireTransmitterRequestType Type { get; set; }
+        public static CreateTransferWireTransmitterRequest CreateCreateTransferWireTransmitterUnstructuredAddress(CreateTransferWireTransmitterUnstructuredAddress createTransferWireTransmitterUnstructuredAddress)
+        {
+            CreateTransferWireTransmitterRequestType typ = CreateTransferWireTransmitterRequestType.CreateTransferWireTransmitterUnstructuredAddress;
 
-        /// <summary>
-        /// Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-        /// </summary>
-        [JsonProperty("line3")]
-        public string? Line3 { get; set; } = null;
+            CreateTransferWireTransmitterRequest res = new CreateTransferWireTransmitterRequest(typ);
+            res.CreateTransferWireTransmitterUnstructuredAddress = createTransferWireTransmitterUnstructuredAddress;
+            return res;
+        }
+        public static CreateTransferWireTransmitterRequest CreateCreateTransferStructuredAddress(CreateTransferStructuredAddress createTransferStructuredAddress)
+        {
+            CreateTransferWireTransmitterRequestType typ = CreateTransferWireTransmitterRequestType.CreateTransferStructuredAddress;
 
-        [JsonProperty("country")]
-        public string Country { get; set; } = default!;
+            CreateTransferWireTransmitterRequest res = new CreateTransferWireTransmitterRequest(typ);
+            res.CreateTransferStructuredAddress = createTransferStructuredAddress;
+            return res;
+        }
+
+        public class CreateTransferWireTransmitterRequestConverter : JsonConverter
+        {
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(CreateTransferWireTransmitterRequest);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                if (reader.TokenType == JsonToken.Null)
+                {
+                    throw new InvalidOperationException("Received unexpected null JSON value");
+                }
+
+                var json = JRaw.Create(reader).ToString();
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new CreateTransferWireTransmitterRequest(CreateTransferWireTransmitterRequestType.CreateTransferWireTransmitterUnstructuredAddress) {
+                        CreateTransferWireTransmitterUnstructuredAddress = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CreateTransferWireTransmitterUnstructuredAddress>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CreateTransferWireTransmitterUnstructuredAddress), new CreateTransferWireTransmitterRequest(CreateTransferWireTransmitterRequestType.CreateTransferWireTransmitterUnstructuredAddress), "CreateTransferWireTransmitterUnstructuredAddress"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CreateTransferWireTransmitterRequest(CreateTransferWireTransmitterRequestType.CreateTransferStructuredAddress) {
+                        CreateTransferStructuredAddress = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CreateTransferStructuredAddress>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CreateTransferStructuredAddress), new CreateTransferWireTransmitterRequest(CreateTransferWireTransmitterRequestType.CreateTransferStructuredAddress), "CreateTransferStructuredAddress"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach (var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null)
+                {
+                    throw new InvalidOperationException("Unexpected null JSON value.");
+                }
+
+                CreateTransferWireTransmitterRequest res = (CreateTransferWireTransmitterRequest)value;
+
+                if (res.CreateTransferWireTransmitterUnstructuredAddress != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CreateTransferWireTransmitterUnstructuredAddress));
+                    return;
+                }
+
+                if (res.CreateTransferStructuredAddress != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CreateTransferStructuredAddress));
+                    return;
+                }
+
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods."
+                );
+            }
+        }
     }
 }

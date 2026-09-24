@@ -13,7 +13,7 @@ namespace Newline53.Sdk.Models.Requests
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+    /// Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
     /// </summary>
     public class CreateTransferWireTransmitterResponse
     {
@@ -24,16 +24,16 @@ namespace Newline53.Sdk.Models.Requests
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
+        /// Up to 24 digits, supplied by Transmitter. Numeric only.
         /// </summary>
         [JsonProperty("transmitter_identifier")]
         public string TransmitterIdentifier { get; set; } = default!;
 
         /// <summary>
-        /// Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
         /// </summary>
-        [JsonProperty("line1", NullValueHandling = NullValueHandling.Include)]
-        public string? Line1 { get; set; }
+        [JsonProperty("line1")]
+        public string? Line1 { get; set; } = null;
 
         /// <summary>
         /// Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
@@ -47,7 +47,37 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("line3")]
         public string? Line3 { get; set; } = null;
 
+        /// <summary>
+        /// Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("building_number")]
+        public string? BuildingNumber { get; set; } = null;
+
+        /// <summary>
+        /// Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("street_name")]
+        public string? StreetName { get; set; } = null;
+
+        /// <summary>
+        /// City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("city")]
+        public string? City { get; set; } = null;
+
+        /// <summary>
+        /// State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+        /// </summary>
+        [JsonProperty("state")]
+        public string? State { get; set; } = null;
+
+        /// <summary>
+        /// US ZIP code (5-digit) or ZIP+4.
+        /// </summary>
+        [JsonProperty("postal_code")]
+        public string? PostalCode { get; set; } = null;
+
         [JsonProperty("country")]
-        public string Country { get; set; } = default!;
+        public string? Country { get; set; } = null;
     }
 }

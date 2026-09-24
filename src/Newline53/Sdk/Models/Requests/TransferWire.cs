@@ -9,6 +9,7 @@
 #nullable enable
 namespace Newline53.Sdk.Models.Requests
 {
+    using Newline53.Sdk.Models.Components;
     using Newline53.Sdk.Models.Requests;
     using Newline53.Sdk.Utils;
     using Newtonsoft.Json;
@@ -22,7 +23,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
         /// </summary>
         [JsonProperty("intermediary_bank_address")]
-        public PostCombinedTransfersIntermediaryBankAddress? IntermediaryBankAddress { get; set; }
+        public TransferIntermediaryBankAddressUnstructuredAddress? IntermediaryBankAddress { get; set; }
 
         [JsonProperty("intermediary_bank_name")]
         public string? IntermediaryBankName { get; set; }
@@ -39,7 +40,10 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("wire_instructions")]
         public string? WireInstructions { get; set; }
 
-        [JsonProperty("wire_transmitter")]
+        /// <summary>
+        /// Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
+        /// </summary>
+        [JsonProperty("wire_transmitter", NullValueHandling = NullValueHandling.Include)]
         public PostCombinedTransfersWireTransmitter? WireTransmitter { get; set; }
     }
 }

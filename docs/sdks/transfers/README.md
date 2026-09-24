@@ -178,9 +178,10 @@ CreateTransferRequest req = new CreateTransferRequest() {
             Country = null,
         },
         Memo = "For the 6-5-23 shipment of pineapple popsicles",
+        PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
     },
     Wire = new CreateTransferWireRequest() {
-        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
             Line1 = "345 Def Ave",
             Line2 = "San Francisco",
             Line3 = "CA 94016",
@@ -189,14 +190,16 @@ CreateTransferRequest req = new CreateTransferRequest() {
         IntermediaryBankName = "Fidelity Fiduciary Bank",
         IntermediaryBankRoutingNumber = "923456789",
         WireInstructions = "Send ASAP",
-        WireTransmitter = new CreateTransferWireTransmitterRequest() {
-            Name = "Marge's Roofing Inc",
-            TransmitterIdentifier = "123456789012ABC",
-            Line1 = "123 Abc St.",
-            Line2 = "Boring, Oregon 97009",
-            Line3 = null,
-            Country = "US",
-        },
+        WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(
+            new CreateTransferWireTransmitterUnstructuredAddress() {
+                Line1 = "123 Abc St.",
+                Line2 = "Boring, Oregon 97009",
+                Line3 = null,
+                Country = "US",
+                Name = "Marge's Roofing Inc",
+                TransmitterIdentifier = "123456789012ABC",
+            }
+        ),
     },
 };
 
@@ -237,6 +240,7 @@ CreateTransferRequest req = new CreateTransferRequest() {
             Country = null,
         },
         Memo = "To unfreeze the prince's assets",
+        PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
     },
 };
 
@@ -289,9 +293,10 @@ CreateTransferRequest req = new CreateTransferRequest() {
             Country = null,
         },
         Memo = "For the 6-5-23 shipment of pineapple popsicles",
+        PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
     },
     Wire = new CreateTransferWireRequest() {
-        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
             Line1 = "345 Def Ave",
             Line2 = "San Francisco",
             Line3 = "CA 94016",
@@ -300,14 +305,16 @@ CreateTransferRequest req = new CreateTransferRequest() {
         IntermediaryBankName = "Fidelity Fiduciary Bank",
         IntermediaryBankRoutingNumber = "923456789",
         WireInstructions = "Send ASAP",
-        WireTransmitter = new CreateTransferWireTransmitterRequest() {
-            Name = "Marge's Roofing Inc",
-            TransmitterIdentifier = "123456789012ABC",
-            Line1 = "123 Abc St.",
-            Line2 = "Boring, Oregon 97009",
-            Line3 = null,
-            Country = "US",
-        },
+        WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(
+            new CreateTransferWireTransmitterUnstructuredAddress() {
+                Line1 = "123 Abc St.",
+                Line2 = "Boring, Oregon 97009",
+                Line3 = null,
+                Country = "US",
+                Name = "Marge's Roofing Inc",
+                TransmitterIdentifier = "123456789012ABC",
+            }
+        ),
     },
 };
 
@@ -337,7 +344,7 @@ CreateTransferRequest req = new CreateTransferRequest() {
     InitiatorType = CreateTransferInitiatorTypeRequest.Customer,
     UsdTransferAmount = "12.34",
     Wire = new CreateTransferWireRequest() {
-        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
             Line1 = "345 Def Ave",
             Line2 = "San Francisco",
             Line3 = "CA 94016",
@@ -346,12 +353,14 @@ CreateTransferRequest req = new CreateTransferRequest() {
         IntermediaryBankName = "Fidelity Fiduciary Bank",
         IntermediaryBankRoutingNumber = "923456789",
         WireInstructions = "Please send ASAP",
-        WireTransmitter = new CreateTransferWireTransmitterRequest() {
-            Name = "Top Tier Tacos",
-            TransmitterIdentifier = "123456789",
-            Line1 = "123 Abc St.",
-            Country = "US",
-        },
+        WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(
+            new CreateTransferWireTransmitterUnstructuredAddress() {
+                Line1 = "123 Abc St.",
+                Country = "US",
+                Name = "Top Tier Tacos",
+                TransmitterIdentifier = "123456789",
+            }
+        ),
     },
 };
 
@@ -404,9 +413,10 @@ CreateTransferRequest req = new CreateTransferRequest() {
             Country = null,
         },
         Memo = "For the 6-5-23 shipment of pineapple popsicles",
+        PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
     },
     Wire = new CreateTransferWireRequest() {
-        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressRequest() {
+        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
             Line1 = "345 Def Ave",
             Line2 = "San Francisco",
             Line3 = "CA 94016",
@@ -415,14 +425,90 @@ CreateTransferRequest req = new CreateTransferRequest() {
         IntermediaryBankName = "Fidelity Fiduciary Bank",
         IntermediaryBankRoutingNumber = "923456789",
         WireInstructions = "Send ASAP",
-        WireTransmitter = new CreateTransferWireTransmitterRequest() {
+        WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(
+            new CreateTransferWireTransmitterUnstructuredAddress() {
+                Line1 = "123 Abc St.",
+                Line2 = "Boring, Oregon 97009",
+                Line3 = null,
+                Country = "US",
+                Name = "Marge's Roofing Inc",
+                TransmitterIdentifier = "123456789012ABC",
+            }
+        ),
+    },
+};
+
+var res = await sdk.Transfers.CreateAsync(req);
+
+// handle response
+```
+### Example Usage: wire_transfer_structured
+
+<!-- UsageSnippet language="csharp" operationID="createTransfer" method="post" path="/transfers" example="wire_transfer_structured" -->
+```csharp
+using Newline53.Sdk;
+using Newline53.Sdk.Models.Components;
+using Newline53.Sdk.Models.Requests;
+
+var sdk = new NewlineSDK(security: new Security() {
+    ProgramUid = "<YOUR_PROGRAM_UID_HERE>",
+    HmacKey = "<YOUR_HMAC_KEY_HERE>",
+});
+
+CreateTransferRequest req = new CreateTransferRequest() {
+    ExternalUid = "partner-generated-id",
+    SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
+    DestinationSyntheticAccountUid = "exMDShw6yM3NHLYV",
+    InitiatingCustomerUid = "iDtmSA52zRhgN4iy",
+    DestinationCustomerUid = "iDtmSA52zRhgN4iy",
+    InitiatorType = CreateTransferInitiatorTypeRequest.Customer,
+    UsdTransferAmount = "12.34",
+    Ach = new CreateTransferAchRequest() {
+        OriginatorName = "J. Fred Muggs",
+        CompanyId = "ABC-123456",
+        CompanyDiscretionaryData = "ABC.123",
+        Prenote = false,
+        SecCode = CreateTransferSecCodeRequest.Cie,
+        PaymentType = CreateTransferPaymentTypeRequest.St,
+        EntryDescription = "ACH Entry",
+        ServiceProcessing = CreateTransferServiceProcessingRequest.Sameday,
+        EffectiveEntryDate = "2023-12-01",
+        IdNumber = "4270465600",
+    },
+    InstantPayment = new CreateTransferInstantPaymentRequest() {
+        InstantPaymentTransmitter = new CreateTransferInstantPaymentTransmitter() {
             Name = "Marge's Roofing Inc",
             TransmitterIdentifier = "123456789012ABC",
-            Line1 = "123 Abc St.",
-            Line2 = "Boring, Oregon 97009",
-            Line3 = null,
+            StreetNumber = "123abc",
+            Street1 = "Abc St.",
+            City = "Chicago",
+            State = "IL",
+            PostalCode = "60301",
+            Country = null,
+        },
+        Memo = "For the 6-5-23 shipment of pineapple popsicles",
+        PurposeOfPayment = CreateTransferPurposeOfPaymentRequest.Payr,
+    },
+    Wire = new CreateTransferWireRequest() {
+        IntermediaryBankAddress = new CreateTransferIntermediaryBankAddressUnstructuredAddressRequest() {
+            Line1 = "345 Def Ave",
+            Line2 = "San Francisco",
+            Line3 = "CA 94016",
             Country = "US",
         },
+        IntermediaryBankName = "Fidelity Fiduciary Bank",
+        IntermediaryBankRoutingNumber = "923456789",
+        WireInstructions = "Send ASAP",
+        WireTransmitter = CreateTransferWireTransmitterRequest.CreateCreateTransferWireTransmitterUnstructuredAddress(
+            new CreateTransferWireTransmitterUnstructuredAddress() {
+                Line1 = "123 Abc St.",
+                Line2 = "Boring, Oregon 97009",
+                Line3 = null,
+                Country = "US",
+                Name = "Marge's Roofing Inc",
+                TransmitterIdentifier = "123456789012ABC",
+            }
+        ),
     },
 };
 
@@ -504,6 +590,22 @@ var res = await sdk.Transfers.GetAsync(uid: "<id>");
 ### Example Usage: wire_transfer
 
 <!-- UsageSnippet language="csharp" operationID="getTransfer" method="get" path="/transfers/{uid}" example="wire_transfer" -->
+```csharp
+using Newline53.Sdk;
+using Newline53.Sdk.Models.Components;
+
+var sdk = new NewlineSDK(security: new Security() {
+    ProgramUid = "<YOUR_PROGRAM_UID_HERE>",
+    HmacKey = "<YOUR_HMAC_KEY_HERE>",
+});
+
+var res = await sdk.Transfers.GetAsync(uid: "<id>");
+
+// handle response
+```
+### Example Usage: wire_transfer_structured
+
+<!-- UsageSnippet language="csharp" operationID="getTransfer" method="get" path="/transfers/{uid}" example="wire_transfer_structured" -->
 ```csharp
 using Newline53.Sdk;
 using Newline53.Sdk.Models.Components;

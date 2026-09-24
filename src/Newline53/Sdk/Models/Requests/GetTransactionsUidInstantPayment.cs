@@ -73,6 +73,12 @@ namespace Newline53.Sdk.Models.Requests
         public string? PaymentId { get; set; }
 
         /// <summary>
+        /// An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
+        /// </summary>
+        [JsonProperty("purpose_of_payment")]
+        public GetTransactionsUidPurposeOfPayment? PurposeOfPayment { get; set; } = null;
+
+        /// <summary>
         /// This field is currently always null.
         /// </summary>
         [JsonProperty("original_end_to_end_id")]
@@ -100,7 +106,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the financial institution where the external account is held.
         /// </summary>
         [JsonProperty("counterparty_bank_address")]
-        public GetTransactionsUidInstantPaymentCounterpartyBankAddress? CounterpartyBankAddress { get; set; } = null;
+        public GetTransactionsUidCounterpartyBankAddress? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
         /// A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).

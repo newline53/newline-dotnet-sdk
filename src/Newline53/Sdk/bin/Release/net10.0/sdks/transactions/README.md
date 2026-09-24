@@ -232,6 +232,22 @@ var res = await sdk.Transactions.GetAsync(uid: "<id>");
 
 // handle response
 ```
+### Example Usage: wire_transaction_structured
+
+<!-- UsageSnippet language="csharp" operationID="get_/transactions/{uid}" method="get" path="/transactions/{uid}" example="wire_transaction_structured" -->
+```csharp
+using Newline53.Sdk;
+using Newline53.Sdk.Models.Components;
+
+var sdk = new NewlineSDK(security: new Security() {
+    ProgramUid = "<YOUR_PROGRAM_UID_HERE>",
+    HmacKey = "<YOUR_HMAC_KEY_HERE>",
+});
+
+var res = await sdk.Transactions.GetAsync(uid: "<id>");
+
+// handle response
+```
 
 ### Parameters
 

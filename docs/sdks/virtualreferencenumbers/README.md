@@ -160,6 +160,30 @@ var res = await sdk.VirtualReferenceNumbers.CreateAsync(req);
 
 // handle response
 ```
+### Example Usage: vrn_type_not_allowed
+
+<!-- UsageSnippet language="csharp" operationID="post_/virtual_reference_numbers" method="post" path="/virtual_reference_numbers" example="vrn_type_not_allowed" -->
+```csharp
+using Newline53.Sdk;
+using Newline53.Sdk.Models.Components;
+using Newline53.Sdk.Models.Requests;
+
+var sdk = new NewlineSDK(security: new Security() {
+    ProgramUid = "<YOUR_PROGRAM_UID_HERE>",
+    HmacKey = "<YOUR_HMAC_KEY_HERE>",
+});
+
+PostVirtualReferenceNumbersRequest req = new PostVirtualReferenceNumbersRequest() {
+    ExternalUid = "partner-generated-id",
+    Name = "greenfield1",
+    SyntheticAccountUid = "Dg1EPao8XukUpHG8",
+    RoutingNumber = "123456789",
+};
+
+var res = await sdk.VirtualReferenceNumbers.CreateAsync(req);
+
+// handle response
+```
 
 ### Parameters
 
@@ -175,6 +199,7 @@ var res = await sdk.VirtualReferenceNumbers.CreateAsync(req);
 
 | Error Type                                                                          | Status Code                                                                         | Content Type                                                                        |
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersBadRequestException          | 400                                                                                 | application/json                                                                    |
 | Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersUnprocessableEntityException | 422                                                                                 | application/json                                                                    |
 | Newline53.Sdk.Models.Errors.APIException                                            | 4XX, 5XX                                                                            | \*/\*                                                                               |
 

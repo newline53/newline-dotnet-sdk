@@ -19,7 +19,7 @@ namespace Newline53.Sdk.Models.Requests
     public class CreateSyntheticAccountWireResponse
     {
         /// <summary>
-        /// Address of the business or individual who owns the external account.
+        /// Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
         /// </summary>
         [JsonProperty("counterparty_address")]
         public CreateSyntheticAccountWireCounterpartyAddressResponse? CounterpartyAddress { get; set; } = null;
@@ -34,7 +34,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the financial institution where the external account is held.
         /// </summary>
         [JsonProperty("counterparty_bank_address")]
-        public CreateSyntheticAccountCounterpartyBankAddressResponse? CounterpartyBankAddress { get; set; } = null;
+        public CreateSyntheticAccountUnstructuredAddressResponse? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
         /// Name of the financial institution where the counterparty account is held.

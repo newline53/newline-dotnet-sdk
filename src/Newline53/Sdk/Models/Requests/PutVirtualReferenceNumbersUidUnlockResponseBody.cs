@@ -97,6 +97,12 @@ namespace Newline53.Sdk.Models.Requests
         public string? VirtualReferenceNumberLastFour { get; set; }
 
         /// <summary>
+        /// The type of VRN.
+        /// </summary>
+        [JsonProperty("type")]
+        public PutVirtualReferenceNumbersUidUnlockType? Type { get; set; }
+
+        /// <summary>
         /// The VRN.
         /// </summary>
         [JsonProperty("virtual_reference_number")]

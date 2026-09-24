@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>Newline53.Sdk</PackageId>
-    <Version>0.5.12</Version>
+    <Version>0.6.0</Version>
     <TargetFramework>net10.0</TargetFramework>
     <Authors>Newline by Fifth Third</Authors>
     <Copyright>Copyright (c) Newline by Fifth Third 2026</Copyright>

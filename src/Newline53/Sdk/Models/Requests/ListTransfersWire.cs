@@ -19,7 +19,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
         /// </summary>
         [JsonProperty("intermediary_bank_address")]
-        public ListTransfersIntermediaryBankAddress? IntermediaryBankAddress { get; set; }
+        public ListTransfersUnstructuredAddress? IntermediaryBankAddress { get; set; }
 
         /// <summary>
         /// Name of the intermediary bank, when applicable. For wires only. Maximum 35 characters.
@@ -33,6 +33,9 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("intermediary_bank_routing_number")]
         public string? IntermediaryBankRoutingNumber { get; set; }
 
+        /// <summary>
+        /// Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
+        /// </summary>
         [JsonProperty("wire_transmitter")]
         public ListTransfersWireTransmitter? WireTransmitter { get; set; }
     }

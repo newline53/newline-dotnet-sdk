@@ -79,12 +79,6 @@ namespace Newline53.Sdk.Models.Requests
         public string? IdNumber { get; set; }
 
         /// <summary>
-        /// Trace ID to identify the transaction across Newline and Fifth Third Bank applications.
-        /// </summary>
-        [JsonProperty("transfer_trace_id")]
-        public string? TransferTraceId { get; set; }
-
-        /// <summary>
         /// Optional additional payment-related information, such as invoice numbers, originator/receiver information, payment instructions, etc. Up to 80 characters. Optional for all newline supported SEC codes other than TEL. Newline will reject the Transfer if an Addenda value is provided with SEC code TEL.
         /// </summary>
         [JsonProperty("addenda")]

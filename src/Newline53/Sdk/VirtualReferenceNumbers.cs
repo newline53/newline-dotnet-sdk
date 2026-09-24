@@ -63,6 +63,7 @@ namespace Newline53.Sdk
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="PostVirtualReferenceNumbersBadRequestException">Bad request. Thrown when the API returns a 400 response.</exception>
         /// <exception cref="PostVirtualReferenceNumbersUnprocessableEntityException">Creation Error. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public Task<PostVirtualReferenceNumbersResponse> CreateAsync(
@@ -353,6 +354,7 @@ namespace Newline53.Sdk
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="PostVirtualReferenceNumbersBadRequestException">Bad request. Thrown when the API returns a 400 response.</exception>
         /// <exception cref="PostVirtualReferenceNumbersUnprocessableEntityException">Creation Error. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async Task<PostVirtualReferenceNumbersResponse> CreateAsync(
@@ -444,6 +446,31 @@ namespace Newline53.Sdk
                     };
                     response.Object = obj;
                     return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if (responseStatusCode == 400)
+            {
+                if (Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    PostVirtualReferenceNumbersBadRequestExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<PostVirtualReferenceNumbersBadRequestExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into PostVirtualReferenceNumbersBadRequestExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata() {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new PostVirtualReferenceNumbersBadRequestException(payload, httpRequest, httpResponse, httpResponseBody);
                 }
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());

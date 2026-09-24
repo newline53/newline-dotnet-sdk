@@ -1556,6 +1556,21 @@
              The original data that was passed to this exception.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersBadRequestExceptionPayload.Status">
+            <summary>
+            HTTP Status Code.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersBadRequestException">
+            <summary>
+            Bad request.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersBadRequestException.Payload">
+            <summary>
+             The original data that was passed to this exception.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersUnprocessableEntityExceptionPayload.Status">
             <summary>
             HTTP Status Code.
@@ -1764,6 +1779,21 @@
         <member name="T:Newline53.Sdk.Models.Requests.AuthorizationStatusRequest">
             <summary>
             The current status of the transaction authorization.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CounterpartyAddressSyntheticAccountUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CounterpartyAddressSyntheticAccountUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CounterpartyAddressSyntheticAccountUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateCustomerAddressRequest.Street1">
@@ -2101,42 +2131,42 @@
             Name of the business or individual who owns the external account. Conditional maximum character length: for all newline supported SEC codes other than CIE, the counterparty_name can be 22 characters. For CIE SEC codes, the counterparty_name can be up to 15 characters.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressRequest">
+        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyAddressUnion">
             <summary>
-            Address of the financial institution where the external account is held.
+            Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressRequest.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressRequest.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyAddressUnstructuredAddress.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressRequest.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyAddressUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyAddressUnstructuredAddress.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressResponse">
+        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest">
             <summary>
             Address of the financial institution where the external account is held.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressResponse.Line1">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressResponse.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest.Line2">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressResponse.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
@@ -2456,34 +2486,74 @@
             A value indicating the overall state of this Synthetic Account.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress">
+            <summary>
+            Structured wire address using ISO-style parsed fields. Accepted when your program's wire address configuration is set to `structured` or `both`. Required fields: `city` and `country`.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.Line1">
+            <summary>
+            Full street line (alternative to `building_number` + `street_name`). Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.Line2">
+            <summary>
+            Optional continuation, unit, or suite. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.City">
+            <summary>
+            Required. 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountStructuredAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountSyntheticAccountCategory">
             <summary>
             The name of the Synthetic Account Category associated with the Synthetic Account Type for this account. Refer to the Synthetic Account Type for details.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressRequest">
+        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountUnstructuredAddressResponse">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the financial institution where the external account is held.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressRequest.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressRequest.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountUnstructuredAddressResponse.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressRequest.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountUnstructuredAddressResponse.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountUnstructuredAddressResponse.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse.Line1">
@@ -2501,6 +2571,31 @@
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireCounterpartyAddressResponse.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireRequest">
             <summary>
             Contains wire-specific information. Only populated if the Synthetic Account is in the `wire_external` category.
@@ -2508,7 +2603,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireRequest.CounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireRequest.CounterpartyName">
@@ -2533,7 +2628,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireResponse.CounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountWireResponse.CounterpartyName">
@@ -2666,11 +2761,6 @@
             Unique identifier supplied by the originator of a transaction (e.g. invoice number). 1 to 22 characters depending on SEC code, alphanumeric. If the SEC value is anything other than CIE, then this is an optional field and can be up to 15 characters. If SEC value CIE is provided, then the ID number is mandatory, and the character length can be up to 22 characters.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferAchResponse.TransferTraceId">
-            <summary>
-            Trace ID to identify the transaction across Newline and Fifth Third Bank applications.
-            </summary>
-        </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferAchResponse.Addenda">
             <summary>
             Optional additional payment-related information, such as invoice numbers, originator/receiver information, payment instructions, etc. Up to 80 characters. Optional for all newline supported SEC codes other than TEL. Newline will reject the Transfer if an Addenda value is provided with SEC code TEL.
@@ -2726,6 +2816,11 @@
             A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentRequest.PurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentResponse">
             <summary>
             Instant payment information. Only present if the Transfer is an instant payment.
@@ -2734,6 +2829,11 @@
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentResponse.Memo">
             <summary>
             A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentResponse.PurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferInstantPaymentTransmitter">
@@ -2776,37 +2876,17 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressRequest.Line1">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressUnstructuredAddressRequest.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressRequest.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressUnstructuredAddressRequest.Line2">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressRequest.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="T:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressResponse">
-            <summary>
-            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressResponse.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressResponse.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressResponse.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferIntermediaryBankAddressUnstructuredAddressRequest.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
@@ -2819,6 +2899,16 @@
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferPaymentTypeResponse">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateTransferPurposeOfPaymentRequest">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateTransferPurposeOfPaymentResponse">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferRequest.ExternalUid">
@@ -2986,6 +3076,76 @@
             A value indicating the overall status of the Transfer.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress">
+            <summary>
+            Structured wire address using ISO-style parsed fields. Accepted when your program's wire address configuration is set to `structured` or `both`. Required fields: `city` and `country`.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.Line1">
+            <summary>
+            Full street line (alternative to `building_number` + `street_name`). Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.Line2">
+            <summary>
+            Optional continuation, unit, or suite. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.City">
+            <summary>
+            Required. 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.Name">
+            <summary>
+            Name of the Transmitter.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferStructuredAddress.TransmitterIdentifier">
+            <summary>
+            Up to 24 digits, supplied by Transmitter. Numeric only.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateTransferUnstructuredAddressResponse">
+            <summary>
+            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferUnstructuredAddressResponse.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferUnstructuredAddressResponse.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferUnstructuredAddressResponse.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferWireRequest">
             <summary>
             Wire-specific information. Only present if the Transfer is a wire.
@@ -3004,6 +3164,11 @@
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireRequest.WireInstructions">
             <summary>
             Additional details or instructions for the wire, issued to the recipient financial institution when the wire is executed.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireRequest.WireTransmitter">
+            <summary>
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferWireResponse">
@@ -3026,6 +3191,11 @@
             The ABA routing number associated with the intermediary bank involved in the wire transfer.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireResponse.WireTransmitter">
+            <summary>
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireResponse.WireInstructions">
             <summary>
             Additional details or instructions for the wire, issued to the recipient financial institution when the wire is executed.
@@ -3033,37 +3203,12 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterRequest">
             <summary>
-            Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterRequest.Name">
-            <summary>
-            Name of the Transmitter.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterRequest.TransmitterIdentifier">
-            <summary>
-            Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterRequest.Line1">
-            <summary>
-            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterRequest.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterRequest.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse">
             <summary>
-            Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.Name">
@@ -3073,12 +3218,12 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.TransmitterIdentifier">
             <summary>
-            Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
+            Up to 24 digits, supplied by Transmitter. Numeric only.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.Line1">
             <summary>
-            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.Line2">
@@ -3089,6 +3234,56 @@
         <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterResponse.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterUnstructuredAddress.Line1">
+            <summary>
+            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterUnstructuredAddress.Name">
+            <summary>
+            Name of the Transmitter.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.CreateTransferWireTransmitterUnstructuredAddress.TransmitterIdentifier">
+            <summary>
+            Up to 24 digits, supplied by Transmitter. Numeric only.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.CustomerTypeRequest">
@@ -3491,6 +3686,11 @@
             Last 4 digits of the VRN.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.DeleteVirtualReferenceNumbersUidResponseBody.Type">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.DeleteVirtualReferenceNumbersUidResponseBody.VirtualReferenceNumber">
             <summary>
             The VRN.
@@ -3499,6 +3699,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.DeleteVirtualReferenceNumbersUidStatus">
             <summary>
             A value indicating the overall state of this VRN.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.DeleteVirtualReferenceNumbersUidType">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.DeniedReason">
@@ -4989,26 +5194,6 @@
             The USD amount of the Synthetic Account's closing balance.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetSyntheticAccountCounterpartyBankAddress">
-            <summary>
-            Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountCounterpartyBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountCounterpartyBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountCounterpartyBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountInstantPayment.CounterpartyAddress">
             <summary>
             Address of the business or individual who owns the external account.
@@ -5244,6 +5429,26 @@
             The name of the Synthetic Account Category for this type. Accounts can be in one of several categories that indicate their handling properties and defining characteristics such as 'general' or 'external'. As an example, 'external' accounts do not actually hold any assets and are instead used to represent an account at an external institution for use in initiating transfers.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetSyntheticAccountUnstructuredAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetSyntheticAccountWire">
             <summary>
             Contains wire-specific information. Only populated if the Synthetic Account is in the `wire_external` category.
@@ -5251,7 +5456,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWire.CounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWire.CounterpartyName">
@@ -5271,7 +5476,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.Line1">
@@ -5287,6 +5492,31 @@
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountWireCounterpartyAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticLineItemsData.Uid">
@@ -5884,6 +6114,61 @@
             A value indicating the current state of authorization for this transaction.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.StreetNumber">
+            <summary>
+            Building number for counterparty address. Alphanumeric only.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.Street1">
+            <summary>
+            Street name for counterparty address.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.Street2">
+            <summary>
+            Optional second line of street.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.City">
+            <summary>
+            Maximum 35 characters.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.State">
+            <summary>
+            2 characters. Must be a valid US state abbreviation.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.PostalCode">
+            <summary>
+            5-digit string. ZIP+4 is allowed.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddressUnstructuredAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddressUnstructuredAddress.Line1">
+            <summary>
+            Part of an unparsed address. Data may vary or be null.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddressUnstructuredAddress.Line2">
+            <summary>
+            Part of an unparsed address. Data may vary or be null.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddressUnstructuredAddress.Line3">
+            <summary>
+            Part of an unparsed address. Data may vary or be null.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsData.Uid">
             <summary>
             Newline-generated unique id resource specific to the current endpoint.
@@ -6300,6 +6585,11 @@
             An originator-defined value. For RTP transactions, this will be the End-to-End ID.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPayment.PurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPayment.OriginalEndToEndId">
             <summary>
             This field is currently always null.
@@ -6323,41 +6613,6 @@
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPayment.CounterpartyBankAddress">
             <summary>
             Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress">
-            <summary>
-            Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress.StreetNumber">
-            <summary>
-            Building number for counterparty address. Alphanumeric only.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress.Street1">
-            <summary>
-            Street name for counterparty address.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress.Street2">
-            <summary>
-            Optional second line of street.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress.City">
-            <summary>
-            Maximum 35 characters.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress.State">
-            <summary>
-            2 characters. Must be a valid US state abbreviation.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentCounterpartyBankAddress.PostalCode">
-            <summary>
-            5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentTransmitter">
@@ -6395,22 +6650,22 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddress">
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddressUnstructuredAddress">
             <summary>
             Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddress.Line1">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddressUnstructuredAddress.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddress.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddressUnstructuredAddress.Line2">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddress.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsIntermediaryBankAddressUnstructuredAddress.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
@@ -6423,6 +6678,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsPaymentType">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsPurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsQueryParamStatus">
@@ -6735,6 +6995,61 @@
             A value indicating the current state of authorization for this transaction.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.StreetNumber">
+            <summary>
+            Building number for counterparty address. Alphanumeric only.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.Street1">
+            <summary>
+            Street name for counterparty address.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.Street2">
+            <summary>
+            Optional second line of street.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.City">
+            <summary>
+            Maximum 35 characters.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.State">
+            <summary>
+            2 characters. Must be a valid US state abbreviation.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.PostalCode">
+            <summary>
+            5-digit string. ZIP+4 is allowed.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddressUnstructuredAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddressUnstructuredAddress.Line1">
+            <summary>
+            Part of an unparsed address. Data may vary or be null.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddressUnstructuredAddress.Line2">
+            <summary>
+            Part of an unparsed address. Data may vary or be null.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddressUnstructuredAddress.Line3">
+            <summary>
+            Part of an unparsed address. Data may vary or be null.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidForeignCorrespondentBank.Name">
             <summary>
             The name of the Foreign Correspondent Bank when provided.
@@ -7007,6 +7322,11 @@
             An originator-defined value. For RTP transactions, this will be the End-to-End ID.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPayment.PurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPayment.OriginalEndToEndId">
             <summary>
             This field is currently always null.
@@ -7077,41 +7397,6 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress">
-            <summary>
-            Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress.StreetNumber">
-            <summary>
-            Building number for counterparty address. Alphanumeric only.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress.Street1">
-            <summary>
-            Street name for counterparty address.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress.Street2">
-            <summary>
-            Optional second line of street.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress.City">
-            <summary>
-            Maximum 35 characters.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress.State">
-            <summary>
-            2 characters. Must be a valid US state abbreviation.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyBankAddress.PostalCode">
-            <summary>
-            5-digit string. ZIP+4 is allowed.
-            </summary>
-        </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentTransmitter">
             <summary>
             Name and address of the Transmitter.
@@ -7147,22 +7432,22 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddress">
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddressUnstructuredAddress">
             <summary>
             Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddress.Line1">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddressUnstructuredAddress.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddress.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddressUnstructuredAddress.Line2">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddress.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidIntermediaryBankAddressUnstructuredAddress.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
@@ -7175,6 +7460,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidPaymentType">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidPurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidRequest.Uid">
@@ -7428,37 +7718,42 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.Line1">
             <summary>
-            Part of an unparsed address. Data may vary or be null.
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.Line2">
             <summary>
-            Part of an unparsed address. Data may vary or be null.
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.Line3">
             <summary>
-            Part of an unparsed address. Data may vary or be null.
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyBankAddress">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.BuildingNumber">
             <summary>
-            Address of the financial institution where the external account is held.
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyBankAddress.Line1">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.StreetName">
             <summary>
-            Part of an unparsed address. Data may vary or be null.
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyBankAddress.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.City">
             <summary>
-            Part of an unparsed address. Data may vary or be null.
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyBankAddress.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.State">
             <summary>
-            Part of an unparsed address. Data may vary or be null.
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsWire">
@@ -7526,26 +7821,6 @@
             Last four digits of originator account number.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsWireCounterpartyBankAddress">
-            <summary>
-            Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsWireCounterpartyBankAddress.Line1">
-            <summary>
-            Part of an unparsed address. Data may vary or be null.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsWireCounterpartyBankAddress.Line2">
-            <summary>
-            Part of an unparsed address. Data may vary or be null.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsWireCounterpartyBankAddress.Line3">
-            <summary>
-            Part of an unparsed address. Data may vary or be null.
-            </summary>
-        </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransferAch">
             <summary>
             ACH information. Only present if the Transfer is an ACH.
@@ -7601,11 +7876,6 @@
             Unique identifier supplied by the originator of a transaction (e.g. invoice number). 1 to 22 characters depending on SEC code, alphanumeric. If the SEC value is anything other than CIE, then this is an optional field and can be up to 15 characters. If SEC value CIE is provided, then the ID number is mandatory, and the character length can be up to 22 characters.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransferAch.TransferTraceId">
-            <summary>
-            Trace ID to identify the transaction across Newline and Fifth Third Bank applications.
-            </summary>
-        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferAch.Addenda">
             <summary>
             Optional additional payment-related information, such as invoice numbers, originator/receiver information, payment instructions, etc. Up to 80 characters. Optional for all newline supported SEC codes other than TEL. Newline will reject the Transfer if an Addenda value is provided with SEC code TEL.
@@ -7656,29 +7926,19 @@
             A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.GetTransferIntermediaryBankAddress">
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferInstantPayment.PurposeOfPayment">
             <summary>
-            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransferIntermediaryBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransferIntermediaryBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.GetTransferIntermediaryBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransferPaymentType">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransferPurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferRequest.Uid">
@@ -7791,6 +8051,26 @@
             A value indicating the overall status of the Transfer.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransferUnstructuredAddress">
+            <summary>
+            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransferWire">
             <summary>
             Wire-specific information. Only present if the Transfer is a wire.
@@ -7811,6 +8091,11 @@
             The ABA routing number associated with the intermediary bank involved in the wire transfer.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferWire.WireTransmitter">
+            <summary>
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferWire.WireInstructions">
             <summary>
             Additional details or instructions for the wire, issued to the recipient financial institution when the wire is executed.
@@ -7818,7 +8103,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter">
             <summary>
-            Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.Name">
@@ -7828,12 +8113,12 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.TransmitterIdentifier">
             <summary>
-            Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
+            Up to 24 digits, supplied by Transmitter. Numeric only.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.Line1">
             <summary>
-            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.Line2">
@@ -7844,6 +8129,31 @@
         <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransferWireTransmitter.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersData.Uid">
@@ -7909,6 +8219,11 @@
         <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersData.VirtualReferenceNumberLastFour">
             <summary>
             Last 4 digits of the VRN.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersData.Type">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersDataStatus">
@@ -7989,6 +8304,11 @@
         <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersResponseBody.Offset">
             <summary>
             Index of the first item to retrieve.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersType">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersUidError.Code">
@@ -8106,6 +8426,11 @@
             Last 4 digits of the VRN.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersUidResponseBody.Type">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersUidResponseBody.VirtualReferenceNumber">
             <summary>
             The VRN.
@@ -8114,6 +8439,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersUidStatus">
             <summary>
             A value indicating the overall state of this VRN.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetVirtualReferenceNumbersUidType">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListCustodialAccountClosingBalancesData.Uid">
@@ -8969,26 +9299,6 @@
             Name of the business or individual who owns the external account. Conditional maximum character length: for all newline supported SEC codes other than CIE, the counterparty_name can be 22 characters. For CIE SEC codes, the counterparty_name can be up to 15 characters.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.ListSyntheticAccountsCounterpartyBankAddress">
-            <summary>
-            Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsCounterpartyBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsCounterpartyBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsCounterpartyBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsData.Uid">
             <summary>
             Newline-generated unique id resource specific to the current endpoint.
@@ -9212,6 +9522,26 @@
         <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsResponseBody.Offset">
             <summary>
             Index of the first item to retrieve.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.ListSyntheticAccountsUnstructuredAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListSyntheticAccountsUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.ListSyntheticAccountsWire">
@@ -9524,26 +9854,6 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.ListTransfersIntermediaryBankAddress">
-            <summary>
-            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersIntermediaryBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersIntermediaryBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersIntermediaryBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
         <member name="T:Newline53.Sdk.Models.Requests.ListTransfersPaymentType">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
@@ -9624,6 +9934,26 @@
             A value indicating the overall status of the Transfer.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.ListTransfersUnstructuredAddress">
+            <summary>
+            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWire.IntermediaryBankAddress">
             <summary>
             Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
@@ -9639,9 +9969,14 @@
             The ABA routing number associated with the intermediary bank involved in the wire transfer.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWire.WireTransmitter">
+            <summary>
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter">
             <summary>
-            Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.Name">
@@ -9651,12 +9986,12 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.TransmitterIdentifier">
             <summary>
-            Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
+            Up to 24 digits, supplied by Transmitter. Numeric only.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.Line1">
             <summary>
-            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.Line2">
@@ -9667,6 +10002,31 @@
         <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.ListTransfersWireTransmitter.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.LockReasonRequest">
@@ -9769,24 +10129,9 @@
             The type of ACH account.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersCounterpartyBankAddress">
+        <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersCounterpartyAddressUnion">
             <summary>
-            Address of the financial institution where the external account is held.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersCounterpartyBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersCounterpartyBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersCounterpartyBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersError.Code">
@@ -9914,24 +10259,14 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersIntermediaryBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersIntermediaryBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersIntermediaryBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
         <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersPaymentType">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersPurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersRequest.ExternalUid">
@@ -10034,54 +10369,9 @@
             Included based on Error Code; Additional context to help users self-solve the error.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireCounterpartyAddress">
-            <summary>
-            Address of the business or individual who owns the external account.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireCounterpartyAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireCounterpartyAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireCounterpartyAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
         <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireTransmitter">
             <summary>
-            Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireTransmitter.Name">
-            <summary>
-            Name of the Transmitter.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireTransmitter.TransmitterIdentifier">
-            <summary>
-            Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireTransmitter.Line1">
-            <summary>
-            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireTransmitter.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersWireTransmitter.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostReturnsAchRequest.AchReturnCode">
@@ -10284,27 +10574,27 @@
             DEPRECATED. Use `return_reason` instead. Wire information for the return transaction (up to 140 characters).
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersError.Code">
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersBadRequestError.Code">
             <summary>
             Code provided by Newline for reference.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersError.Title">
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersBadRequestError.Title">
             <summary>
             Title of Error Code.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersError.Detail">
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersBadRequestError.Detail">
             <summary>
             Description of Error Code.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersError.OccurredAt">
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersBadRequestError.OccurredAt">
             <summary>
             Error Timestamp.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersError.Extra">
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersBadRequestError.Extra">
             <summary>
             Included based on Error Code; Additional context to help users self-solve the error.
             </summary>
@@ -10337,6 +10627,11 @@
         <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersRequest.RoutingNumber">
             <summary>
             The ABA routing number associated with this VRN.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersRequest.Type">
+            <summary>
+            The type of VRN. Defaults to `business` if omitted. `consumer` is only available if enabled for your program.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersResponse.Object">
@@ -10414,6 +10709,11 @@
             Last 4 digits of the VRN.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersResponseBody.Type">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersResponseBody.VirtualReferenceNumber">
             <summary>
             The VRN.
@@ -10422,6 +10722,36 @@
         <member name="T:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersStatus">
             <summary>
             A value indicating the overall state of this VRN.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersTypeResponseBody">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersUnprocessableEntityError.Code">
+            <summary>
+            Code provided by Newline for reference.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersUnprocessableEntityError.Title">
+            <summary>
+            Title of Error Code.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersUnprocessableEntityError.Detail">
+            <summary>
+            Description of Error Code.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersUnprocessableEntityError.OccurredAt">
+            <summary>
+            Error Timestamp.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PostVirtualReferenceNumbersUnprocessableEntityError.Extra">
+            <summary>
+            Included based on Error Code; Additional context to help users self-solve the error.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutTransactionsUidAuthorizeAuthorization">
@@ -10624,11 +10954,6 @@
             Unique identifier supplied by the originator of a transaction (e.g. invoice number). 1 to 22 characters depending on SEC code, alphanumeric. If the SEC value is anything other than CIE, then this is an optional field and can be up to 15 characters. If SEC value CIE is provided, then the ID number is mandatory, and the character length can be up to 22 characters.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelAch.TransferTraceId">
-            <summary>
-            Trace ID to identify the transaction across Newline and Fifth Third Bank applications.
-            </summary>
-        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelAch.Addenda">
             <summary>
             Optional additional payment-related information, such as invoice numbers, originator/receiver information, payment instructions, etc. Up to 80 characters. Optional for all newline supported SEC codes other than TEL. Newline will reject the Transfer if an Addenda value is provided with SEC code TEL.
@@ -10704,29 +11029,19 @@
             A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelIntermediaryBankAddress">
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelInstantPayment.PurposeOfPayment">
             <summary>
-            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelIntermediaryBankAddress.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelIntermediaryBankAddress.Line2">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelIntermediaryBankAddress.Line3">
-            <summary>
-            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelPaymentType">
             <summary>
             Recurring (R), single entry (S), or standing authorization entry (ST). If no value is provided, the default value populated in the NACHA file is for a single entry.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelPurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelRequest.Uid">
@@ -10874,6 +11189,26 @@
             Included based on Error Code; Additional context to help users self-solve the error.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelUnstructuredAddress">
+            <summary>
+            Address of the intermediary bank. To be populated if an intermediary bank is required to execute the wire transfer.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWire">
             <summary>
             Wire-specific information. Only present if the Transfer is a wire.
@@ -10894,6 +11229,11 @@
             The ABA routing number associated with the intermediary bank involved in the wire transfer.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWire.WireTransmitter">
+            <summary>
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWire.WireInstructions">
             <summary>
             Additional details or instructions for the wire, issued to the recipient financial institution when the wire is executed.
@@ -10901,7 +11241,7 @@
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter">
             <summary>
-            Address of the Transmitter. Must be provided if the `initiator_type` is `transmitter`.
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The address format on requests depends on your program's wire address configuration. Responses always return all address fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.Name">
@@ -10911,12 +11251,12 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.TransmitterIdentifier">
             <summary>
-            Up to 24 characters, and supplied by Transmitter. Alphanumeric only.
+            Up to 24 digits, supplied by Transmitter. Numeric only.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.Line1">
             <summary>
-            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.Line2">
@@ -10927,6 +11267,31 @@
         <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutTransfersUidCancelWireTransmitter.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidInstantPaymentRailRegistrationStatus">
@@ -11059,6 +11424,11 @@
             Last 4 digits of the VRN.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidLockResponseBody.Type">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidLockResponseBody.VirtualReferenceNumber">
             <summary>
             The VRN.
@@ -11067,6 +11437,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidLockStatus">
             <summary>
             A value indicating the overall state of this VRN.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidLockType">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidLockUnprocessableEntityError.Code">
@@ -11209,6 +11584,11 @@
             Last 4 digits of the VRN.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidResponseBody.Type">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidResponseBody.VirtualReferenceNumber">
             <summary>
             The VRN.
@@ -11217,6 +11597,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidStatus">
             <summary>
             A value indicating the overall state of this VRN.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidType">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidUnlockInstantPaymentRailRegistrationStatus">
@@ -11334,6 +11719,11 @@
             Last 4 digits of the VRN.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidUnlockResponseBody.Type">
+            <summary>
+            The type of VRN.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidUnlockResponseBody.VirtualReferenceNumber">
             <summary>
             The VRN.
@@ -11342,6 +11732,11 @@
         <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidUnlockStatus">
             <summary>
             A value indicating the overall state of this VRN.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidUnlockType">
+            <summary>
+            The type of VRN.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PutVirtualReferenceNumbersUidUnlockUnprocessableEntityError.Code">
@@ -11439,6 +11834,26 @@
             Name of the business or individual who owns the external account. Conditional maximum character length: for all newline supported SEC codes other than CIE, the counterparty_name can be 22 characters. For CIE SEC codes, the counterparty_name can be up to 15 characters.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.SyntheticAccountCounterpartyBankAddressUnstructuredAddress">
+            <summary>
+            Address of the financial institution where the external account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountCounterpartyBankAddressUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountCounterpartyBankAddressUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountCounterpartyBankAddressUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.SyntheticAccountInstantPayment">
             <summary>
             Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
@@ -11519,6 +11934,46 @@
             Contains wire-specific information. Only populated if the Synthetic Account is in the `wire_external` category.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress">
+            <summary>
+            Structured wire address using ISO-style parsed fields. Accepted when your program's wire address configuration is set to `structured` or `both`. Required fields: `city` and `country`.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.Line1">
+            <summary>
+            Full street line (alternative to `building_number` + `street_name`). Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.Line2">
+            <summary>
+            Optional continuation, unit, or suite. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.City">
+            <summary>
+            Required. 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountStructuredAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.SyntheticAccountWire">
             <summary>
             Contains wire-specific information. Only populated if the Synthetic Account is in the `wire_external` category.
@@ -11526,7 +11981,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountWire.CounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.SyntheticAccountWire.CounterpartyName">
@@ -11614,6 +12069,26 @@
             A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferInstantPayment.PurposeOfPayment">
+            <summary>
+            An optional code supplied when an instant payment Transfer is initiated, indicating the kind of transaction being sent. If supplied, it must be one of the approved codes listed below, otherwise the Transfer is rejected. Omit the field or send an empty string to leave it unset; when unset it is returned as an empty string. Only applies to Newline initiated instant payments; it is not populated for received instant payments.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferIntermediaryBankAddressUnstructuredAddress.Line1">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferIntermediaryBankAddressUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferIntermediaryBankAddressUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.TransferRequest">
             <summary>
             Transfer details to initiate a transfer with. For more details on object structure, supported options and examples please refer to <a href="#tag/Transfers/paths/~1transfers/post">POST /transfers</a>. **NOTE:** Only source or destination synthetic account uid must be supplied for combined transfer, `synthetic_account` from the request will be used as the other party.
@@ -11669,6 +12144,56 @@
             Wire-specific information. Only present if the Transfer is a wire.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.TransferStructuredAddress">
+            <summary>
+            Structured wire address using ISO-style parsed fields. Accepted when your program's wire address configuration is set to `structured` or `both`. Required fields: `city` and `country`.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.Line1">
+            <summary>
+            Full street line (alternative to `building_number` + `street_name`). Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.Line2">
+            <summary>
+            Optional continuation, unit, or suite. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.City">
+            <summary>
+            Required. 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.Name">
+            <summary>
+            Name of the Transmitter.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferStructuredAddress.TransmitterIdentifier">
+            <summary>
+            Up to 24 digits, supplied by Transmitter. Numeric only.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.TransferWire">
             <summary>
             Wire-specific information. Only present if the Transfer is a wire.
@@ -11687,6 +12212,16 @@
         <member name="P:Newline53.Sdk.Models.Requests.TransferWire.WireInstructions">
             <summary>
             Additional details or instructions for the wire, issued to the recipient financial institution when the wire is executed.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.TransferWire.WireTransmitter">
+            <summary>
+            Information about the Transmitter. Must be provided if the `initiator_type` is `transmitter`. Includes the transmitter's name, identifier, and address. The accepted address format depends on your program's wire address configuration. For `unstructured` format: `line1` and `country` are required. For `structured` format: `city` and `country` are required.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.TypeRequest">
+            <summary>
+            The type of VRN. Defaults to `business` if omitted. `consumer` is only available if enabled for your program.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateCustomerAddressRequest.Street1">
@@ -12014,42 +12549,42 @@
             Name of the business or individual who owns the external account. Conditional maximum character length: for all newline supported SEC codes other than CIE, the counterparty_name can be 22 characters. For CIE SEC codes, the counterparty_name can be up to 15 characters.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressRequest">
+        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyAddressUnion">
             <summary>
-            Address of the financial institution where the external account is held.
+            Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressRequest.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressRequest.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressRequest.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyAddressUnstructuredAddress.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressResponse">
+        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest">
             <summary>
             Address of the financial institution where the external account is held.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressResponse.Line1">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressResponse.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest.Line2">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressResponse.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
@@ -12369,34 +12904,74 @@
             A value indicating the overall state of this Synthetic Account.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress">
+            <summary>
+            Structured wire address using ISO-style parsed fields. Accepted when your program's wire address configuration is set to `structured` or `both`. Required fields: `city` and `country`.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.Line1">
+            <summary>
+            Full street line (alternative to `building_number` + `street_name`). Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.Line2">
+            <summary>
+            Optional continuation, unit, or suite. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.City">
+            <summary>
+            Required. 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountStructuredAddress.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountSyntheticAccountCategory">
             <summary>
             The name of the Synthetic Account Category associated with the Synthetic Account Type for this account. Refer to the Synthetic Account Type for details.
             </summary>
         </member>
-        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressRequest">
+        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountUnstructuredAddressResponse">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the financial institution where the external account is held.
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressRequest.Line1">
-            <summary>
-            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
-            </summary>
-        </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressRequest.Line2">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountUnstructuredAddressResponse.Line1">
             <summary>
             Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
-        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressRequest.Line3">
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountUnstructuredAddressResponse.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountUnstructuredAddressResponse.Line3">
             <summary>
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse.Line1">
@@ -12414,6 +12989,31 @@
             Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse.BuildingNumber">
+            <summary>
+            Parsed building or house number. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse.StreetName">
+            <summary>
+            Parsed street name. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse.City">
+            <summary>
+            City. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse.State">
+            <summary>
+            State or province. Optional 33 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireCounterpartyAddressResponse.PostalCode">
+            <summary>
+            US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireRequest">
             <summary>
             Contains wire-specific information. Only populated if the Synthetic Account is in the `wire_external` category.
@@ -12421,7 +13021,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireRequest.CounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Unstructured format uses `line1`/`line2`/`line3`/`country`. Structured format uses `building_number`/`street_name`/`city`/`postal_code`/`state`/`country` (with `city` and `country` required).
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireRequest.CounterpartyName">
@@ -12446,7 +13046,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireResponse.CounterpartyAddress">
             <summary>
-            Address of the business or individual who owns the external account.
+            Address of the business or individual who owns the external account. The accepted format on requests depends on your program's wire address configuration (`unstructured`, `structured`, or `both`). Responses always return all fields; fields not applicable to the stored format are `null`.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireResponse.CounterpartyName">
@@ -12462,6 +13062,31 @@
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountWireResponse.CounterpartyBankName">
             <summary>
             Name of the financial institution where the counterparty account is held.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.WireTransmitterTransferUnstructuredAddress.Line1">
+            <summary>
+            Up to 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.WireTransmitterTransferUnstructuredAddress.Line2">
+            <summary>
+            Optional 35 characters. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.WireTransmitterTransferUnstructuredAddress.Line3">
+            <summary>
+            Optional 32 characters. Note that this length is shorter than the other lines. Cannot contain \# @ $ ! " % &amp; * ; &lt; &gt; { } [ ] _ ^ \ ~
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.WireTransmitterTransferUnstructuredAddress.Name">
+            <summary>
+            Name of the Transmitter.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.WireTransmitterTransferUnstructuredAddress.TransmitterIdentifier">
+            <summary>
+            Up to 24 digits, supplied by Transmitter. Numeric only.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.INewlineSDK">
@@ -14392,6 +15017,7 @@
             <exception cref="T:System.OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
             <exception cref="T:System.Net.Http.HttpRequestException">The HTTP request failed due to network issues.</exception>
             <exception cref="T:Newline53.Sdk.Models.Errors.ResponseValidationException">The response body could not be deserialized.</exception>
+            <exception cref="T:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersBadRequestException">Bad request. Thrown when the API returns a 400 response.</exception>
             <exception cref="T:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersUnprocessableEntityException">Creation Error. Thrown when the API returns a 422 response.</exception>
             <exception cref="T:Newline53.Sdk.Models.Errors.APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         </member>
@@ -14524,6 +15150,7 @@
             <exception cref="T:System.OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
             <exception cref="T:System.Net.Http.HttpRequestException">The HTTP request failed due to network issues.</exception>
             <exception cref="T:Newline53.Sdk.Models.Errors.ResponseValidationException">The response body could not be deserialized.</exception>
+            <exception cref="T:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersBadRequestException">Bad request. Thrown when the API returns a 400 response.</exception>
             <exception cref="T:Newline53.Sdk.Models.Errors.PostVirtualReferenceNumbersUnprocessableEntityException">Creation Error. Thrown when the API returns a 422 response.</exception>
             <exception cref="T:Newline53.Sdk.Models.Errors.APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         </member>

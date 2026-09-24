@@ -20,7 +20,7 @@ namespace Newline53.Sdk.Models.Errors
     public class PostVirtualReferenceNumbersUnprocessableEntityExceptionPayload
     {
         [JsonProperty("errors")]
-        public List<PostVirtualReferenceNumbersError>? Errors { get; set; }
+        public List<PostVirtualReferenceNumbersUnprocessableEntityError>? Errors { get; set; }
 
         /// <summary>
         /// HTTP Status Code.
@@ -43,7 +43,7 @@ namespace Newline53.Sdk.Models.Errors
         public PostVirtualReferenceNumbersUnprocessableEntityExceptionPayload Payload { get; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use PostVirtualReferenceNumbersUnprocessableEntityException.Payload.Errors instead.")]
-        public List<PostVirtualReferenceNumbersError>? Errors { get; set; }
+        public List<PostVirtualReferenceNumbersUnprocessableEntityError>? Errors { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use PostVirtualReferenceNumbersUnprocessableEntityException.Payload.Status instead.")]
         public long? Status { get; set; }
