@@ -12,13 +12,16 @@ namespace Newline53.Sdk.Models.Requests
     using Newline53.Sdk.Utils;
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+    /// </summary>
     public class CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse
     {
         /// <summary>
-        /// Building number for counterparty address. Alphanumeric only.
+        /// Building number for counterparty address. Alphanumeric only. Optional.
         /// </summary>
         [JsonProperty("street_number")]
-        public string StreetNumber { get; set; } = default!;
+        public string? StreetNumber { get; set; } = null;
 
         /// <summary>
         /// Street name for counterparty address.
@@ -30,7 +33,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Optional second line of street.
         /// </summary>
         [JsonProperty("street2")]
-        public string? Street2 { get; set; }
+        public string? Street2 { get; set; } = null;
 
         /// <summary>
         /// Maximum 35 characters.

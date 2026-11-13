@@ -28,3 +28,4 @@ var value = CreateTransferPurposeOfPaymentRequest.Nows;
 | `Acct` | ACCT   |
 | `Cblk` | CBLK   |
 | `Mp2P` | MP2P   |
+| `Trad` | TRAD   |

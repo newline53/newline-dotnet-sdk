@@ -302,8 +302,10 @@
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUidServiceProcessing.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUidStatus.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUidType.md
+/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUidUltimateDebtorInfo.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUidWire.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUidWireCounterpartyAddress.md
+/home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsUltimateDebtorInfo.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransactionsWire.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransferAch.md
 /home/jenkins/agent/workspace/e_Builds_newline-dotnet-sdk_main/src/Newline53/Sdk/bin/Release/net10.0/Models/Requests/GetTransferCancellation.md

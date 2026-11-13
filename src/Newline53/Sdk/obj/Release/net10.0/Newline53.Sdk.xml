@@ -2196,9 +2196,14 @@
             Included based on Error Code; Additional context to help users self-solve the error.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentCounterpartyAddressRequest">
+            <summary>
+            Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentCounterpartyAddressRequest.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentCounterpartyAddressRequest.Street1">
@@ -2226,9 +2231,14 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse">
+            <summary>
+            Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse.Street1">
@@ -5214,9 +5224,14 @@
             Exactly 10 digits long (no hyphens, parentheses, or spaces).
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetSyntheticAccountInstantPaymentCounterpartyAddress">
+            <summary>
+            Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountInstantPaymentCounterpartyAddress.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetSyntheticAccountInstantPaymentCounterpartyAddress.Street1">
@@ -6064,6 +6079,11 @@
             Trace ID to identify the transaction across Newline and Fifth Third Bank applications.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsAch.OriginalTraceNumber">
+            <summary>
+            Original trace number from the ACH trace ID at the time of transaction creation.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsAch.OriginatorRoutingNumber">
             <summary>
             Routing Number of individual or business originating the ACH transfer.
@@ -6121,7 +6141,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsCounterpartyBankAddress.Street1">
@@ -6615,6 +6635,11 @@
             Address of the financial institution where the external account is held.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsInstantPayment.UltimateDebtorInfo">
+            <summary>
+            Information about the ultimate debtor (the entity on whose behalf the payment is made). Only populated if your program has enabled RTP Ultimate Debtor support.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsInstantPaymentTransmitter">
             <summary>
             Name and address of the Transmitter.
@@ -6945,6 +6970,11 @@
             Trace ID to identify the transaction across Newline and Fifth Third Bank applications.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidAch.OriginalTraceNumber">
+            <summary>
+            Original trace number from the ACH trace ID at the time of transaction creation.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidAch.OriginatorRoutingNumber">
             <summary>
             Routing Number of individual or business originating the ACH transfer.
@@ -7002,7 +7032,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidCounterpartyBankAddress.Street1">
@@ -7352,6 +7382,11 @@
             Address of the financial institution where the external account is held.
             </summary>
         </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPayment.UltimateDebtorInfo">
+            <summary>
+            Information about the ultimate debtor (the entity on whose behalf the payment is made). Only populated if your program has enabled RTP Ultimate Debtor support.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPayment.Memo">
             <summary>
             A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
@@ -7369,7 +7404,7 @@
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyAddress.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidInstantPaymentCounterpartyAddress.Street1">
@@ -7636,6 +7671,46 @@
             Transactions are categorized by Type.  See the Transaction Statuses and Transaction Types section below for a list and definition of each Transaction Type that Newline supports.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo">
+            <summary>
+            Information about the ultimate debtor (the entity on whose behalf the payment is made). Only populated if your program has enabled RTP Ultimate Debtor support.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.UltimateDebtorName">
+            <summary>
+            Name of the ultimate debtor.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.StreetNumber">
+            <summary>
+            Building number. Alphanumeric only.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.Street1">
+            <summary>
+            Street name.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.Street2">
+            <summary>
+            Optional second line of street.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.City">
+            <summary>
+            Maximum 35 characters.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.State">
+            <summary>
+            2 characters. Must be a valid US state abbreviation.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidUltimateDebtorInfo.PostalCode">
+            <summary>
+            5-digit string. ZIP+4 is allowed.
+            </summary>
+        </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUidWire">
             <summary>
             Wire-specific information. Only present if the Transaction is a wire.
@@ -7754,6 +7829,46 @@
         <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUidWireCounterpartyAddress.PostalCode">
             <summary>
             US ZIP code (5-digit) or ZIP+4.
+            </summary>
+        </member>
+        <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo">
+            <summary>
+            Information about the ultimate debtor (the entity on whose behalf the payment is made). Only populated if your program has enabled RTP Ultimate Debtor support.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.UltimateDebtorName">
+            <summary>
+            Name of the ultimate debtor.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.StreetNumber">
+            <summary>
+            Building number. Alphanumeric only.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.Street1">
+            <summary>
+            Street name.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.Street2">
+            <summary>
+            Optional second line of street.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.City">
+            <summary>
+            Maximum 35 characters.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.State">
+            <summary>
+            2 characters. Must be a valid US state abbreviation.
+            </summary>
+        </member>
+        <member name="P:Newline53.Sdk.Models.Requests.GetTransactionsUltimateDebtorInfo.PostalCode">
+            <summary>
+            5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
         <member name="T:Newline53.Sdk.Models.Requests.GetTransactionsWire">
@@ -10189,9 +10304,14 @@
             The initiator_type declares the originator for the Transfer. If set to Customer, origination information is pulled from the supplied initiating_customer_uid. If set to Transmitter, origination information is required, provided in the transmitter object (see below). Defaults to Customer. Providing Transmitter information is the Client's responsibility, please review more details in our <a href="https://developers.newline53.com/docs/transfer#introduction-what-is-a-transfer">Transfers guide</a>.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.PostCombinedTransfersInstantPaymentCounterpartyAddress">
+            <summary>
+            Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersInstantPaymentCounterpartyAddress.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.PostCombinedTransfersInstantPaymentCounterpartyAddress.Street1">
@@ -12614,9 +12734,14 @@
             Included based on Error Code; Additional context to help users self-solve the error.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentCounterpartyAddressRequest">
+            <summary>
+            Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentCounterpartyAddressRequest.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentCounterpartyAddressRequest.Street1">
@@ -12644,9 +12769,14 @@
             5-digit string. ZIP+4 is allowed.
             </summary>
         </member>
+        <member name="T:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentCounterpartyAddressResponse">
+            <summary>
+            Address of the counterparty. If any address field is provided, street1, city, state, postal_code, and country are required. street_number and street2 are optional.
+            </summary>
+        </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentCounterpartyAddressResponse.StreetNumber">
             <summary>
-            Building number for counterparty address. Alphanumeric only.
+            Building number for counterparty address. Alphanumeric only. Optional.
             </summary>
         </member>
         <member name="P:Newline53.Sdk.Models.Requests.UpdateSyntheticAccountInstantPaymentCounterpartyAddressResponse.Street1">
@@ -13432,6 +13562,8 @@
             Transactions are created based on how you instruct Newline to move assets (a Transfer) or how assets are moved or spent outside your application (ATM withdrawals, debit card purchases, wire transfers, etc…). The Transaction contains the amount, origin, and destination of assets. Newline categorizes Transactions into types to assist in their classification and representation.<br/>
             <br/>
             Transactions fall into many categories, including debit card purchases, direct deposits, interest, and fees. This endpoint can retrieve a list of Transactions or track the status of an ongoing Transaction.<br/>
+            <br/>
+            Transactions with type `manual_instant_payment_return` identify the client debit associated with a manually requested return of a received instant payment. The external return is handled separately by operations.<br/>
             <br/>
             Transaction Events are created as a result of a Transaction. They capture the steps required to complete the Transaction. These can be used to view the progress of an in-flight Transaction or see the history of a completed Transaction.<br/>
             <br/>
@@ -14429,6 +14561,8 @@
             <br/>
             Transactions fall into many categories, including debit card purchases, direct deposits, interest, and fees. This endpoint can retrieve a list of Transactions or track the status of an ongoing Transaction.<br/>
             <br/>
+            Transactions with type `manual_instant_payment_return` identify the client debit associated with a manually requested return of a received instant payment. The external return is handled separately by operations.<br/>
+            <br/>
             Transaction Events are created as a result of a Transaction. They capture the steps required to complete the Transaction. These can be used to view the progress of an in-flight Transaction or see the history of a completed Transaction.<br/>
             <br/>
             Line Items are created for each Transaction Event. They catalog the individual credits and debits associated with the accounts involved in the Transaction.
@@ -14604,6 +14738,8 @@
             Transactions are created based on how you instruct Newline to move assets (a Transfer) or how assets are moved or spent outside your application (ATM withdrawals, debit card purchases, wire transfers, etc…). The Transaction contains the amount, origin, and destination of assets. Newline categorizes Transactions into types to assist in their classification and representation.<br/>
             <br/>
             Transactions fall into many categories, including debit card purchases, direct deposits, interest, and fees. This endpoint can retrieve a list of Transactions or track the status of an ongoing Transaction.<br/>
+            <br/>
+            Transactions with type `manual_instant_payment_return` identify the client debit associated with a manually requested return of a received instant payment. The external return is handled separately by operations.<br/>
             <br/>
             Transaction Events are created as a result of a Transaction. They capture the steps required to complete the Transaction. These can be used to view the progress of an in-flight Transaction or see the history of a completed Transaction.<br/>
             <br/>

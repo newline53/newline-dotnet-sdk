@@ -36,6 +36,7 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("initiated_wire_return")] InitiatedWireReturn,
         [JsonProperty("instant_payment")] InstantPayment,
         [JsonProperty("interest")] Interest,
+        [JsonProperty("manual_instant_payment_return")] ManualInstantPaymentReturn,
         [JsonProperty("other")] Other,
         [JsonProperty("peer_to_peer_transfer")] PeerToPeerTransfer,
         [JsonProperty("reversal")] Reversal,

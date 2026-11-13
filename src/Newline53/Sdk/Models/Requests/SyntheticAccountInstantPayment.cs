@@ -22,7 +22,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Address of the business or individual who owns the external account.
         /// </summary>
         [JsonProperty("counterparty_address")]
-        public PostCombinedTransfersInstantPaymentCounterpartyAddress CounterpartyAddress { get; set; } = default!;
+        public PostCombinedTransfersInstantPaymentCounterpartyAddress? CounterpartyAddress { get; set; }
 
         /// <summary>
         /// Name of the business or individual who owns the counterparty Account.

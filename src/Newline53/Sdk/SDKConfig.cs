@@ -55,7 +55,7 @@ namespace Newline53.Sdk
             Client = client ?? new NewlineSDKHttpClient();
             ServerUrl = "";
             ServerName = null;
-            UserAgent = "speakeasy-sdk/csharp 0.6.0 2.935.1 1.0.0 Newline53.Sdk";
+            UserAgent = "speakeasy-sdk/csharp 0.6.12 2.960.8 1.0.0 Newline53.Sdk";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;

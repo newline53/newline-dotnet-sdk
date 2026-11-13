@@ -91,9 +91,9 @@ func testCreateSyntheticAccountCreateSyntheticAccountNewSyntheticAccount0(w http
 		},
 		InstantPayment: &operations.CreateSyntheticAccountInstantPaymentResponse{
 			CounterpartyAddress: &operations.CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse{
-				StreetNumber: "123abc",
+				StreetNumber: optionalnullable.From(types.String("123abc")),
 				Street1:      "Abc St.",
-				Street2:      types.String("Suite 4A"),
+				Street2:      optionalnullable.From(types.String("Suite 4A")),
 				City:         types.String("Chicago"),
 				State:        types.String("IL"),
 				PostalCode:   types.String("60301"),
@@ -264,7 +264,7 @@ func testCreateSyntheticAccountCreateSyntheticAccountInstantPaymentSyntheticAcco
 		AccountNumber:         nil,
 		InstantPayment: &operations.CreateSyntheticAccountInstantPaymentResponse{
 			CounterpartyAddress: &operations.CreateSyntheticAccountInstantPaymentCounterpartyAddressResponse{
-				StreetNumber: "242",
+				StreetNumber: optionalnullable.From(types.String("242")),
 				Street1:      "Marble St",
 				City:         types.String("Marblehead"),
 				State:        types.String("MA"),

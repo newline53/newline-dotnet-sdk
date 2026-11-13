@@ -30,6 +30,7 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("ACCT")] Acct,
         [JsonProperty("CBLK")] Cblk,
         [JsonProperty("MP2P")] Mp2P,
+        [JsonProperty("TRAD")] Trad,
     }
 
     public static class GetTransactionsPurposeOfPaymentExtension

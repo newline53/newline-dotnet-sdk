@@ -109,6 +109,12 @@ namespace Newline53.Sdk.Models.Requests
         public GetTransactionsUidCounterpartyBankAddress? CounterpartyBankAddress { get; set; } = null;
 
         /// <summary>
+        /// Information about the ultimate debtor (the entity on whose behalf the payment is made). Only populated if your program has enabled RTP Ultimate Debtor support.
+        /// </summary>
+        [JsonProperty("ultimate_debtor_info")]
+        public GetTransactionsUidUltimateDebtorInfo? UltimateDebtorInfo { get; set; } = null;
+
+        /// <summary>
         /// A message transmitted to the recipient bank. Supports letters, numbers, and special characters: . !@#$%^&amp;*',/:;&lt;=&gt;?~`|[]{})(+=_- (max 140 characters).
         /// </summary>
         [JsonProperty("memo")]

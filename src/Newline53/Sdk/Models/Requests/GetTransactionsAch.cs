@@ -109,6 +109,12 @@ namespace Newline53.Sdk.Models.Requests
         public string? TransferTraceId { get; set; }
 
         /// <summary>
+        /// Original trace number from the ACH trace ID at the time of transaction creation.
+        /// </summary>
+        [JsonProperty("original_trace_number")]
+        public string? OriginalTraceNumber { get; set; }
+
+        /// <summary>
         /// Routing Number of individual or business originating the ACH transfer.
         /// </summary>
         [JsonProperty("originator_routing_number")]

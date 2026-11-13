@@ -18,10 +18,10 @@ namespace Newline53.Sdk.Models.Requests
     public class GetTransactionsUidInstantPaymentCounterpartyAddress
     {
         /// <summary>
-        /// Building number for counterparty address. Alphanumeric only.
+        /// Building number for counterparty address. Alphanumeric only. Optional.
         /// </summary>
         [JsonProperty("street_number")]
-        public string StreetNumber { get; set; } = default!;
+        public string? StreetNumber { get; set; } = null;
 
         /// <summary>
         /// Street name for counterparty address.
@@ -33,7 +33,7 @@ namespace Newline53.Sdk.Models.Requests
         /// Optional second line of street.
         /// </summary>
         [JsonProperty("street2")]
-        public string? Street2 { get; set; }
+        public string? Street2 { get; set; } = null;
 
         /// <summary>
         /// Maximum 35 characters.
