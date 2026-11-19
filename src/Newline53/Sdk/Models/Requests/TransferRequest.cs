@@ -52,7 +52,7 @@ namespace Newline53.Sdk.Models.Requests
         /// The initiator_type declares the originator for the Transfer. If set to Customer, origination information is pulled from the supplied initiating_customer_uid. If set to Transmitter, origination information is required, provided in the transmitter object (see below). Defaults to Customer. Providing Transmitter information is the Client's responsibility, please review more details in our <a href="https://developers.newline53.com/docs/transfer#introduction-what-is-a-transfer">Transfers guide</a>.
         /// </summary>
         [JsonProperty("initiator_type")]
-        public PostCombinedTransfersInitiatorType? InitiatorType { get; set; }
+        public PostCombinedTransfersInitiatorTypeRequest? InitiatorType { get; set; }
 
         /// <summary>
         /// The USD amount to transfer.
@@ -64,18 +64,18 @@ namespace Newline53.Sdk.Models.Requests
         /// ACH information. Only present if the Transfer is an ACH.
         /// </summary>
         [JsonProperty("ach")]
-        public TransferAch? Ach { get; set; }
+        public TransferAchRequest? Ach { get; set; }
 
         /// <summary>
         /// Instant payment information. Only present if the Transfer is an instant payment.
         /// </summary>
         [JsonProperty("instant_payment")]
-        public TransferInstantPayment? InstantPayment { get; set; }
+        public TransferInstantPaymentRequest? InstantPayment { get; set; }
 
         /// <summary>
         /// Wire-specific information. Only present if the Transfer is a wire.
         /// </summary>
         [JsonProperty("wire")]
-        public TransferWire? Wire { get; set; }
+        public TransferWireRequest? Wire { get; set; }
     }
 }

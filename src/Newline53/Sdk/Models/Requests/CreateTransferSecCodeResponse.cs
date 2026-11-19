@@ -14,7 +14,7 @@ namespace Newline53.Sdk.Models.Requests
     using System;
 
     /// <summary>
-    /// Standard Entry Class (SEC) code. Newline supports the following SEC codes: CCD, CIE, PPD, TEL, WEB. For more details, refer to our ACH guide's <a href="https://developers.newline53.com/docs/ach#standard-entry-class-sec-codes">section</a> on SEC code use.
+    /// Standard Entry Class (SEC) code. Newline supports the following SEC codes: CCD, CIE, PPD, TEL, WEB, IAT. For more details, refer to our ACH guide's <a href="https://developers.newline53.com/docs/ach#standard-entry-class-sec-codes">section</a> on SEC code use.
     /// </summary>
     public enum CreateTransferSecCodeResponse
     {
@@ -23,6 +23,7 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("PPD")] Ppd,
         [JsonProperty("TEL")] Tel,
         [JsonProperty("WEB")] Web,
+        [JsonProperty("IAT")] Iat,
     }
 
     public static class CreateTransferSecCodeResponseExtension

@@ -105,7 +105,7 @@ namespace Newline53.Sdk
     /// 4. Ensure the new environment is selected.<br/>
     /// <br/>
     /// **Set API Keys**  <br/>
-    /// You will need to set your HMAC Key and Program UID as environment variables. You can set the variables in the headers in the environment tab within the Postman Collection.<br/>
+    /// You will need to set your HMAC Key and `sub` as environment variables: `hmac_key` and `program_uid` (set `program_uid` to the `sub` Newline shared with you, which for some pre-existing integrations is your Program UID). You can set the variables in the headers in the environment tab within the Postman Collection.<br/>
     /// <br/>
     /// # Terminology<br/>
     /// <br/>
@@ -149,7 +149,9 @@ namespace Newline53.Sdk
         /// - POST <a href="https://developers.newline53.com/reference/post_auth">Generate an authentication token: POST /auth</a>
         /// <br/>
         /// Newline requires access tokens and static IP addresses for authentication and authorization when requesting any resource endpoints. <a href="https://developers.newline53.com/reference/post_auth">POST /auth</a> is used to obtain and refresh the required access tokens. Please work with your Relationship Team or the Newline Team in all environments to set up the IP Allowlist for your Program.  <br/>
-        /// To obtain an access token, you must submit a refresh token. After a program is set up, Newline will share your Program UID and HMAC key offline. These values are required for the refresh token and access token requests.<br/>
+        /// To obtain an access token, you must submit a refresh token. After a program is set up, Newline will share a subject (`sub`) and HMAC key offline. These values are required for the refresh token and access token requests.<br/>
+        /// <br/>
+        /// The `sub` identifies the service user making the request. For some pre-existing integrations it is your Program UID, which continues to work. A program may have more than one service user; each has its own `sub` and HMAC key, and a token must be signed with the key that belongs to its `sub`.<br/>
         /// <br/>
         /// ## Auth Flow<br/>
         /// <br/>
@@ -159,11 +161,11 @@ namespace Newline53.Sdk
         /// ```<br/>
         /// {<br/>
         ///   "iat": &lt;current Epoch time&gt;,<br/>
-        ///   "sub": &lt;Program UID&gt;<br/>
+        ///   "sub": &lt;sub shared by Newline, e.g. your Program UID&gt;<br/>
         /// }<br/>
         ///  ```<br/>
         /// <br/>
-        /// 1. Sign the JWT to create a JWS with the shared key using HS512 / SHA-512.<br/>
+        /// 1. Sign the JWT to create a JWS with the HMAC key shared for that `sub` using HS512 / SHA-512.<br/>
         /// <br/>
         /// 2. Exchange for an access token by sending a request to <a href="https://developers.newline53.com/reference/post_auth">POST /auth</a>, using the JWS in the `Authorization` header.<br/>
         /// <br/>
@@ -486,7 +488,7 @@ namespace Newline53.Sdk
     /// 4. Ensure the new environment is selected.<br/>
     /// <br/>
     /// **Set API Keys**  <br/>
-    /// You will need to set your HMAC Key and Program UID as environment variables. You can set the variables in the headers in the environment tab within the Postman Collection.<br/>
+    /// You will need to set your HMAC Key and `sub` as environment variables: `hmac_key` and `program_uid` (set `program_uid` to the `sub` Newline shared with you, which for some pre-existing integrations is your Program UID). You can set the variables in the headers in the environment tab within the Postman Collection.<br/>
     /// <br/>
     /// # Terminology<br/>
     /// <br/>

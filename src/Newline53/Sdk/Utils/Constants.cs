@@ -22,12 +22,12 @@ namespace Newline53.Sdk.Utils
         /// <summary>
         /// The version of the SDK.
         /// </summary>
-        public const string SdkVersion = "0.6.12";
+        public const string SdkVersion = "0.6.14";
 
         /// <summary>
         /// The version of the SDK generator used to create this SDK.
         /// </summary>
-        public const string SdkGenVersion = "2.960.8";
+        public const string SdkGenVersion = "2.961.1";
 
         /// <summary>
         /// The version of the OpenAPI document used to generate this SDK.

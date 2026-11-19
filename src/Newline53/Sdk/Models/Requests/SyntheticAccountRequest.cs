@@ -64,18 +64,18 @@ namespace Newline53.Sdk.Models.Requests
         /// Contains ACH-specific information. Only populated if the Synthetic Account is in the `ach_external` category.
         /// </summary>
         [JsonProperty("ach")]
-        public SyntheticAccountAch? Ach { get; set; }
+        public SyntheticAccountAchRequest? Ach { get; set; }
 
         /// <summary>
         /// Contains Instant Payment-specific information. Only populated if the Synthetic Account is in the `instant_payment_external` category.
         /// </summary>
         [JsonProperty("instant_payment")]
-        public SyntheticAccountInstantPayment? InstantPayment { get; set; }
+        public SyntheticAccountInstantPaymentRequest? InstantPayment { get; set; }
 
         /// <summary>
         /// Contains wire-specific information. Only populated if the Synthetic Account is in the `wire_external` category.
         /// </summary>
         [JsonProperty("wire")]
-        public SyntheticAccountWire? Wire { get; set; }
+        public SyntheticAccountWireRequest? Wire { get; set; }
     }
 }

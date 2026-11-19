@@ -43,7 +43,7 @@ namespace Newline53.Sdk.Models.Requests
         public bool? Prenote { get; set; }
 
         /// <summary>
-        /// Standard Entry Class (SEC) code. Newline supports the following SEC codes: CCD, CIE, PPD, TEL, WEB. For more details, refer to our ACH guide's <a href="https://developers.newline53.com/docs/ach#standard-entry-class-sec-codes">section</a> on SEC code use.
+        /// Standard Entry Class (SEC) code. Newline supports the following SEC codes: CCD, CIE, PPD, TEL, WEB, IAT. For more details, refer to our ACH guide's <a href="https://developers.newline53.com/docs/ach#standard-entry-class-sec-codes">section</a> on SEC code use.
         /// </summary>
         [JsonProperty("sec_code")]
         public GetTransactionsUidSecCode? SecCode { get; set; }
@@ -79,6 +79,12 @@ namespace Newline53.Sdk.Models.Requests
         public string? IdNumber { get; set; }
 
         /// <summary>
+        /// Optional additional payment-related information, such as invoice numbers, originator/receiver information, payment instructions, etc. Up to 80 characters. Optional for all newline supported SEC codes other than TEL. Newline will reject the Transfer if an Addenda value is provided with SEC code TEL.
+        /// </summary>
+        [JsonProperty("addenda")]
+        public string? Addenda { get; set; }
+
+        /// <summary>
         /// ACH return code, pulled from the Return File.
         /// </summary>
         [JsonProperty("ach_return_code")]
@@ -89,12 +95,6 @@ namespace Newline53.Sdk.Models.Requests
         /// </summary>
         [JsonProperty("ach_return_reason")]
         public string? AchReturnReason { get; set; }
-
-        /// <summary>
-        /// Optional additional payment-related information, such as invoice numbers, originator/receiver information, payment instructions, etc. Up to 80 characters. Optional for all newline supported SEC codes other than TEL. Newline will reject the Transfer if an Addenda value is provided with SEC code TEL.
-        /// </summary>
-        [JsonProperty("addenda")]
-        public string? Addenda { get; set; }
 
         /// <summary>
         /// Notification of Change (NOC) code, returned from the RDFI (Receiving Depository Financial Institution).

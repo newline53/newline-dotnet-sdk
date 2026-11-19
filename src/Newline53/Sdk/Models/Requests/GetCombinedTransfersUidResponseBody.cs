@@ -43,15 +43,9 @@ namespace Newline53.Sdk.Models.Requests
         [JsonProperty("status")]
         public GetCombinedTransfersUidStatus? Status { get; set; }
 
-        /// <summary>
-        /// Parameters provided at time of creation. UID field will get populated once synthetic account has been successfully created, unless uid value was supplied at creation time.
-        /// </summary>
         [JsonProperty("synthetic_account")]
         public GetCombinedTransfersUidSyntheticAccount? SyntheticAccount { get; set; }
 
-        /// <summary>
-        /// Parameters provided at time of creation. UID field will get populated once transfer has been successfully initiated.
-        /// </summary>
         [JsonProperty("transfer")]
         public GetCombinedTransfersUidTransfer? Transfer { get; set; }
 

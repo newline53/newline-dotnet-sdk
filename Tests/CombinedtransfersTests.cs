@@ -80,8 +80,8 @@ public class CombinedtransfersTests
                 SyntheticAccountTypeUid = "UyjH72G9KAhmbpNS",
                 RoutingNumber = "04200031",
                 AccountNumber = "1234567890",
-                Ach = new SyntheticAccountAch() {
-                    AccountType = PostCombinedTransfersAccountType.Checking,
+                Ach = new SyntheticAccountAchRequest() {
+                    AccountType = PostCombinedTransfersAccountTypeRequest.Checking,
                     CounterpartyName = "awesome counterparty",
                 },
             },
@@ -89,13 +89,13 @@ public class CombinedtransfersTests
                 SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
                 DestinationSyntheticAccountUid = "beHyJNeBU65Xv8LK",
                 InitiatingCustomerUid = "axz9sbUgRVu5wqbw",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                Ach = new TransferAch() {
+                Ach = new TransferAchRequest() {
                     OriginatorName = "J. Fred Muggs",
-                    SecCode = PostCombinedTransfersSecCode.Cie,
+                    SecCode = PostCombinedTransfersSecCodeRequest.Cie,
                     EntryDescription = "ACH Entry",
-                    ServiceProcessing = PostCombinedTransfersServiceProcessing.Sameday,
+                    ServiceProcessing = PostCombinedTransfersServiceProcessingRequest.Sameday,
                     EffectiveEntryDate = "2023-12-01",
                 },
             },
@@ -132,13 +132,13 @@ public class CombinedtransfersTests
                 SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
                 DestinationSyntheticAccountUid = "beHyJNeBU65Xv8LK",
                 InitiatingCustomerUid = "axz9sbUgRVu5wqbw",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                Ach = new TransferAch() {
+                Ach = new TransferAchRequest() {
                     OriginatorName = "J. Fred Muggs",
-                    SecCode = PostCombinedTransfersSecCode.Cie,
+                    SecCode = PostCombinedTransfersSecCodeRequest.Cie,
                     EntryDescription = "ACH Entry",
-                    ServiceProcessing = PostCombinedTransfersServiceProcessing.Sameday,
+                    ServiceProcessing = PostCombinedTransfersServiceProcessingRequest.Sameday,
                     EffectiveEntryDate = "2023-12-01",
                 },
             },
@@ -172,8 +172,8 @@ public class CombinedtransfersTests
                 SyntheticAccountTypeUid = "UyjH72G9KAhmbpNS",
                 RoutingNumber = "04200031",
                 AccountNumber = "1234567890",
-                InstantPayment = new SyntheticAccountInstantPayment() {
-                    CounterpartyAddress = new PostCombinedTransfersInstantPaymentCounterpartyAddress() {
+                InstantPayment = new SyntheticAccountInstantPaymentRequest() {
+                    CounterpartyAddress = new PostCombinedTransfersInstantPaymentCounterpartyAddressRequest() {
                         StreetNumber = "123",
                         Street1 = "Main street",
                         City = "Brooklyn",
@@ -190,10 +190,10 @@ public class CombinedtransfersTests
                 SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
                 DestinationSyntheticAccountUid = "beHyJNeBU65Xv8LK",
                 InitiatingCustomerUid = "axz9sbUgRVu5wqbw",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                InstantPayment = new TransferInstantPayment() {
-                    InstantPaymentTransmitter = new PostCombinedTransfersInstantPaymentTransmitter() {
+                InstantPayment = new TransferInstantPaymentRequest() {
+                    InstantPaymentTransmitter = new PostCombinedTransfersInstantPaymentTransmitterRequest() {
                         Name = "Royalty Asset Management",
                         TransmitterIdentifier = "123456789",
                         StreetNumber = "123",
@@ -239,10 +239,10 @@ public class CombinedtransfersTests
                 SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
                 DestinationSyntheticAccountUid = "beHyJNeBU65Xv8LK",
                 InitiatingCustomerUid = "axz9sbUgRVu5wqbw",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                InstantPayment = new TransferInstantPayment() {
-                    InstantPaymentTransmitter = new PostCombinedTransfersInstantPaymentTransmitter() {
+                InstantPayment = new TransferInstantPaymentRequest() {
+                    InstantPaymentTransmitter = new PostCombinedTransfersInstantPaymentTransmitterRequest() {
                         Name = "Royalty Asset Management",
                         TransmitterIdentifier = "123456789",
                         StreetNumber = "123",
@@ -285,7 +285,7 @@ public class CombinedtransfersTests
                 SyntheticAccountTypeUid = "UyjH72G9KAhmbpNS",
                 RoutingNumber = "04200031",
                 AccountNumber = "1234567890",
-                Wire = new SyntheticAccountWire() {
+                Wire = new SyntheticAccountWireRequest() {
                     CounterpartyName = "Awesome Counterparty",
                     CounterpartyBankName = "Biggest Bank Inc",
                 },
@@ -294,17 +294,17 @@ public class CombinedtransfersTests
                 SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
                 DestinationSyntheticAccountUid = "beHyJNeBU65Xv8LK",
                 InitiatingCustomerUid = "axz9sbUgRVu5wqbw",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                Wire = new TransferWire() {
-                    IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
+                Wire = new TransferWireRequest() {
+                    IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Main St",
                         Line2 = "Brooklyn NY",
                         Country = "US",
                     },
                     IntermediaryBankName = "Big Bank Inc",
                     IntermediaryBankRoutingNumber = "123456789",
-                    WireTransmitter = PostCombinedTransfersWireTransmitter.CreateTransferStructuredAddress(new TransferStructuredAddress() {
+                    WireTransmitter = PostCombinedTransfersWireTransmitterRequest.CreateTransferStructuredAddress(new TransferStructuredAddress() {
                         BuildingNumber = "456",
                         StreetName = "Second St",
                         City = "Queens",
@@ -348,17 +348,17 @@ public class CombinedtransfersTests
                 SourceSyntheticAccountUid = "4XkJnsfHsuqrxmeX",
                 DestinationSyntheticAccountUid = "beHyJNeBU65Xv8LK",
                 InitiatingCustomerUid = "axz9sbUgRVu5wqbw",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                Wire = new TransferWire() {
-                    IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
+                Wire = new TransferWireRequest() {
+                    IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Main St",
                         Line2 = "Brooklyn NY",
                         Country = "US",
                     },
                     IntermediaryBankName = "Big Bank Inc",
                     IntermediaryBankRoutingNumber = "123456789",
-                    WireTransmitter = PostCombinedTransfersWireTransmitter.CreateTransferStructuredAddress(new TransferStructuredAddress() {
+                    WireTransmitter = PostCombinedTransfersWireTransmitterRequest.CreateTransferStructuredAddress(new TransferStructuredAddress() {
                         BuildingNumber = "456",
                         StreetName = "Second St",
                         City = "Queens",
@@ -401,12 +401,12 @@ public class CombinedtransfersTests
                 RoutingNumber = "123456789",
                 AccountNumber = "123456789012",
                 ExternalProcessorToken = "processor-sandbox-96d86f35-ef58-4e4a-826f-4870b5d677f2",
-                Ach = new SyntheticAccountAch() {
-                    AccountType = PostCombinedTransfersAccountType.Checking,
+                Ach = new SyntheticAccountAchRequest() {
+                    AccountType = PostCombinedTransfersAccountTypeRequest.Checking,
                     CounterpartyName = "Thelma's Flooring LLC",
                 },
-                InstantPayment = new SyntheticAccountInstantPayment() {
-                    CounterpartyAddress = new PostCombinedTransfersInstantPaymentCounterpartyAddress() {
+                InstantPayment = new SyntheticAccountInstantPaymentRequest() {
+                    CounterpartyAddress = new PostCombinedTransfersInstantPaymentCounterpartyAddressRequest() {
                         StreetNumber = "123abc",
                         Street1 = "Abc St.",
                         Street2 = "Suite 4A",
@@ -419,7 +419,7 @@ public class CombinedtransfersTests
                     Email = "payments@veryexcellentbusiness.com",
                     Phone = "5555551212",
                 },
-                Wire = new SyntheticAccountWire() {
+                Wire = new SyntheticAccountWireRequest() {
                     CounterpartyAddress = PostCombinedTransfersCounterpartyAddressUnion.CreateCounterpartyAddressSyntheticAccountUnstructuredAddress(new CounterpartyAddressSyntheticAccountUnstructuredAddress() {
                         Line1 = "234 Xyz Rd",
                         Line2 = "APT 5",
@@ -427,7 +427,7 @@ public class CombinedtransfersTests
                         Country = "US",
                     }),
                     CounterpartyName = "Marge's Roofing Inc",
-                    CounterpartyBankAddress = new SyntheticAccountCounterpartyBankAddressUnstructuredAddress() {
+                    CounterpartyBankAddress = new SyntheticAccountCounterpartyBankAddressUnstructuredAddressRequest() {
                         Line1 = "123 Abc St.",
                         Line2 = "Boring, Oregon 97009",
                         Line3 = null,
@@ -442,22 +442,22 @@ public class CombinedtransfersTests
                 DestinationSyntheticAccountUid = "exMDShw6yM3NHLYV",
                 InitiatingCustomerUid = "iDtmSA52zRhgN4iy",
                 DestinationCustomerUid = "iDtmSA52zRhgN4iy",
-                InitiatorType = PostCombinedTransfersInitiatorType.Customer,
+                InitiatorType = PostCombinedTransfersInitiatorTypeRequest.Customer,
                 UsdTransferAmount = "12.34",
-                Ach = new TransferAch() {
+                Ach = new TransferAchRequest() {
                     OriginatorName = "J. Fred Muggs",
                     CompanyId = "ABC-123456",
                     CompanyDiscretionaryData = "ABC.123",
                     Prenote = false,
-                    SecCode = PostCombinedTransfersSecCode.Cie,
-                    PaymentType = PostCombinedTransfersPaymentType.St,
+                    SecCode = PostCombinedTransfersSecCodeRequest.Cie,
+                    PaymentType = PostCombinedTransfersPaymentTypeRequest.St,
                     EntryDescription = "ACH Entry",
-                    ServiceProcessing = PostCombinedTransfersServiceProcessing.Sameday,
+                    ServiceProcessing = PostCombinedTransfersServiceProcessingRequest.Sameday,
                     EffectiveEntryDate = "2023-12-01",
                     IdNumber = "4270465600",
                 },
-                InstantPayment = new TransferInstantPayment() {
-                    InstantPaymentTransmitter = new PostCombinedTransfersInstantPaymentTransmitter() {
+                InstantPayment = new TransferInstantPaymentRequest() {
+                    InstantPaymentTransmitter = new PostCombinedTransfersInstantPaymentTransmitterRequest() {
                         Name = "Marge's Roofing Inc",
                         TransmitterIdentifier = "123456789012ABC",
                         StreetNumber = "123abc",
@@ -470,8 +470,8 @@ public class CombinedtransfersTests
                     Memo = "For the 6-5-23 shipment of pineapple popsicles",
                     PurposeOfPayment = PostCombinedTransfersPurposeOfPayment.Payr,
                 },
-                Wire = new TransferWire() {
-                    IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddress() {
+                Wire = new TransferWireRequest() {
+                    IntermediaryBankAddress = new TransferIntermediaryBankAddressUnstructuredAddressRequest() {
                         Line1 = "345 Def Ave",
                         Line2 = "San Francisco",
                         Line3 = "CA 94016",
@@ -480,7 +480,7 @@ public class CombinedtransfersTests
                     IntermediaryBankName = "Fidelity Fiduciary Bank",
                     IntermediaryBankRoutingNumber = "923456789",
                     WireInstructions = "Send ASAP",
-                    WireTransmitter = PostCombinedTransfersWireTransmitter.CreateWireTransmitterTransferUnstructuredAddress(new WireTransmitterTransferUnstructuredAddress() {
+                    WireTransmitter = PostCombinedTransfersWireTransmitterRequest.CreateWireTransmitterTransferUnstructuredAddress(new WireTransmitterTransferUnstructuredAddress() {
                         Line1 = "123 Abc St.",
                         Line2 = "Boring, Oregon 97009",
                         Line3 = null,
